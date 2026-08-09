@@ -1,1 +1,20 @@
-IyBDYXBzdG9uZSBSZXF1aXJlbWVudHMgTWF0cml4Cgp8IElEIHwgUmVxdWlyZW1lbnQgfCBDb2RlIGFydGlmYWN0IHwgQWNjZXB0YW5jZSB0ZXN0IHwgU2NyZWVuc2hvdCB8CnwtLS18LS0tfC0tLXwtLS18LS0tfAp8IFIxIHwgU3BhcmsgcGlwZWxpbmUgfCBgcGlwZWxpbmUvaW5nZXN0X2Rlc3RpbmF0aW9uc193ZWF0aGVyLnB5YCB8IEJyb256ZSBhbmQgU2lsdmVyIERlbHRhIHRhYmxlcyBjb250YWluIHJvd3MgfCBTcGFyayByZXN1bHRzIGFuZCB0YWJsZSBjb3VudHMgfAp8IFIyIHwgVGhpcmQtcGFydHkgQVBJIHwgT3Blbi1NZXRlbyBhbmQgV2lraW1lZGlhIGNhbGxzIGluIHBpcGVsaW5lIHwgTGlzYm9uIGNvb3JkaW5hdGVzLCBmb3JlY2FzdCwgYW5kIGFydGljbGUgdGV4dCByZXR1cm5lZCB8IE5vdGVib29rIEFQSSBvdXRwdXQgfAp8IFIzIHwgVW5zdHJ1Y3R1cmVkIGRhdGEgfCBXaWtpbWVkaWEgdGV4dCBpbiBgYWN0aXZpdHlfZG9jdW1lbnRzYCB8IERvY3VtZW50cyBjb250YWluIG1lYW5pbmdmdWwgdGV4dCB8IExha2ViYXNlIHF1ZXJ5IHwKfCBSNCB8IFNlbWFudGljIHJldHJpZXZhbCB8IEVtYmVkZGluZ3MgcGx1cyBjb3NpbmUgc2VhcmNoIGluIE1DUCB8IE5hdHVyYWwtbGFuZ3VhZ2UgcXVlcnkgcmV0dXJucyByYW5rZWQgYWN0aXZpdGllcyB8IEFnZW50IHRvb2wgcmVzcG9uc2UgfAp8IFI1IHwgTGFrZWJhc2UgcmVsYXRpb25hbCBkYXRhIHwgYHNxbC9zZXR1cC5zcWxgIHwgUEtzLCBGS3MsIHNlZWQgZGF0YSwgYW5kIG11bHRpcGxlIHJlbGF0ZWQgdGFibGVzIHwgU1FMIHJlc3VsdHMgYW5kIGNvbnN0cmFpbnRzIHwKfCBSNiB8IEZyb250ZW5kIHwgYGZyb250ZW5kL2FwcC5weWAgYW5kIHRlbXBsYXRlIHwgVHJpcCBkYXNoYm9hcmQgbG9hZHMgaW4gRGF0YWJyaWNrcyBBcHBzIHwgQXBwIG92ZXJ2aWV3IHwKfCBSNyB8IEFnZW50IHJlYWRzIHwgV2VhdGhlciwgaXRpbmVyYXJ5LCBhbmQgc2VtYW50aWMtc2VhcmNoIHRvb2xzIHwgQWdlbnQgYW5zd2VycyB1c2luZyBjdXJyZW50IHN0b3JlZCBkYXRhIHwgQWdlbnQgY29udmVyc2F0aW9uIHwKfCBSOCB8IEFnZW50IHdyaXRlcyB8IEFkZCwgbW92ZSwgcmVtb3ZlLCBhbmQgcGFja2luZyB0b29scyB8IERhdGFiYXNlIHN0YXRlIGNoYW5nZXMgYW5kIHBlcnNpc3RzIGFmdGVyIHJlZnJlc2ggfCBCZWZvcmUvYWZ0ZXIgU1FMIGFuZCBhcHAgfAoKIyMgU2NvcGUgZ3VhcmRyYWlscwoKLSBPbmUgZGVtbyB1c2VyIGFuZCBvbmUgdGhyZWUtZGF5IExpc2JvbiB0cmlwLgotIE5vIGF1dGhlbnRpY2F0aW9uIFVJLCBib29raW5nIGVuZ2luZSwgbWFwcywgb3IgcGF5bWVudCBpbnRlZ3JhdGlvbi4KLSBObyBjdXN0b20gbW9kZWwtc2VydmluZyBlbmRwb2ludC4KLSBBZ2VudCBCcmlja3MgY29uc3VtZXMgdGhlIEZhc3RNQ1Agc2VydmVyIHVzaW5nIHRoZSBzYW1lIHBhdHRlcm4gYXMgRGF5IDMuCi0gTGFrZWJhc2Ugc2VjcmV0cywgRmxhc2sgZGVwbG95bWVudCwgYW5kIGBwZ3ZlY3RvcmAgZm9sbG93IHRoZSB2YWxpZGF0ZWQgRGF5cyAxIGFuZCAyIHBhdHRlcm5zLgo=
+# Capstone Requirements Matrix
+
+| ID | Requirement | Code artifact | Acceptance test | Screenshot |
+|---|---|---|---|---|
+| R1 | Spark pipeline | `pipeline/ingest_destinations_weather.py` | Bronze and Silver Delta tables contain rows | Spark results and table counts |
+| R2 | Third-party API | Open-Meteo and Wikimedia calls in pipeline | Lisbon coordinates, forecast, and article text returned | Notebook API output |
+| R3 | Unstructured data | Wikimedia text in `activity_documents` | Documents contain meaningful text | Lakebase query |
+| R4 | Semantic retrieval | Embeddings plus cosine search in MCP | Natural-language query returns ranked activities | Agent tool response |
+| R5 | Lakebase relational data | `sql/setup.sql` | PKs, FKs, seed data, and multiple related tables | SQL results and constraints |
+| R6 | Frontend | `frontend/app.py` and template | Trip dashboard loads in Databricks Apps | App overview |
+| R7 | Agent reads | Weather, itinerary, and semantic-search tools | Agent answers using current stored data | Agent conversation |
+| R8 | Agent writes | Add, move, remove, and packing tools | Database state changes and persists after refresh | Before/after SQL and app |
+
+## Scope guardrails
+
+- One demo user and one three-day Lisbon trip.
+- No authentication UI, booking engine, maps, or payment integration.
+- No custom model-serving endpoint.
+- Agent Bricks consumes the FastMCP server using the same pattern as Day 3.
+- Lakebase secrets, Flask deployment, and `pgvector` follow the validated Days 1 and 2 patterns.
