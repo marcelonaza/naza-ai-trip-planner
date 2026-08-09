@@ -1,1 +1,49 @@
-IiIiTGFrZWJhc2UgY29ubmVjdGlvbiBoZWxwZXIgbWF0Y2hpbmcgdGhlIHZhbGlkYXRlZCBib290LWNhbXAgcGF0dGVybi4iIiIKCmltcG9ydCBiYXNlNjQKaW1wb3J0IG9zCmZyb20gY29udGV4dGxpYiBpbXBvcnQgY29udGV4dG1hbmFnZXIKCmltcG9ydCBwc3ljb3BnMgpmcm9tIGRhdGFicmlja3Muc2RrIGltcG9ydCBXb3Jrc3BhY2VDbGllbnQKZnJvbSBwc3ljb3BnMi5leHRyYXMgaW1wb3J0IFJlYWxEaWN0Q3Vyc29yCgpfd29ya3NwYWNlID0gV29ya3NwYWNlQ2xpZW50KCkKX3Njb3BlID0gb3MuZW52aXJvbi5nZXQoIkxBS0VCQVNFX1NFQ1JFVF9TQ09QRSIsICJkYXRhYmFzZSIpCl9rZXkgPSBvcy5lbnZpcm9uLmdldCgiTEFLRUJBU0VfU0VDUkVUX0tFWSIsICJsYWtlYmFzZS11cmwiKQoKCmRlZiBfbGFrZWJhc2VfdXJsKCkgLT4gc3RyOgogICAgc2VjcmV0ID0gX3dvcmtzcGFjZS5zZWNyZXRzLmdldF9zZWNyZXQoc2NvcGU9X3Njb3BlLCBrZXk9X2tleSkKICAgIHJldHVybiBiYXNlNjQuYjY0ZGVjb2RlKHNlY3JldC52YWx1ZSkuZGVjb2RlKCJ1dGYtOCIpCgoKQGNvbnRleHRtYW5hZ2VyCmRlZiBnZXRfY29ubmVjdGlvbigpOgogICAgY29ubiA9IHBzeWNvcGcyLmNvbm5lY3QoX2xha2ViYXNlX3VybCgpLCBjdXJzb3JfZmFjdG9yeT1SZWFsRGljdEN1cnNvcikKICAgIHRyeToKICAgICAgICB5aWVsZCBjb25uCiAgICBmaW5hbGx5OgogICAgICAgIGNvbm4uY2xvc2UoKQoKCmRlZiBydW5fcXVlcnkoc3FsOiBzdHIsIHBhcmFtczogdHVwbGUgfCBkaWN0IHwgTm9uZSA9IE5vbmUpIC0+IGxpc3RbZGljdF06CiAgICB3aXRoIGdldF9jb25uZWN0aW9uKCkgYXMgY29ubiwgY29ubi5jdXJzb3IoKSBhcyBjdXJzb3I6CiAgICAgICAgY3Vyc29yLmV4ZWN1dGUoc3FsLCBwYXJhbXMpCiAgICAgICAgcmV0dXJuIGN1cnNvci5mZXRjaGFsbCgpCgoKZGVmIHJ1bl93cml0ZV9yZXR1cm5pbmcoc3FsOiBzdHIsIHBhcmFtczogdHVwbGUgfCBkaWN0IHwgTm9uZSA9IE5vbmUpIC0+IGRpY3Q6CiAgICB3aXRoIGdldF9jb25uZWN0aW9uKCkgYXMgY29ubiwgY29ubi5jdXJzb3IoKSBhcyBjdXJzb3I6CiAgICAgICAgY3Vyc29yLmV4ZWN1dGUoc3FsLCBwYXJhbXMpCiAgICAgICAgcm93ID0gY3Vyc29yLmZldGNob25lKCkKICAgICAgICBjb25uLmNvbW1pdCgpCiAgICAgICAgcmV0dXJuIHJvdwoKCmRlZiBydW5fd3JpdGUoc3FsOiBzdHIsIHBhcmFtczogdHVwbGUgfCBkaWN0IHwgTm9uZSA9IE5vbmUpIC0+IGludDoKICAgIHdpdGggZ2V0X2Nvbm5lY3Rpb24oKSBhcyBjb25uLCBjb25uLmN1cnNvcigpIGFzIGN1cnNvcjoKICAgICAgICBjdXJzb3IuZXhlY3V0ZShzcWwsIHBhcmFtcykKICAgICAgICBjb3VudCA9IGN1cnNvci5yb3djb3VudAogICAgICAgIGNvbm4uY29tbWl0KCkKICAgICAgICByZXR1cm4gY291bnQK
+"""Lakebase connection helper matching the validated boot-camp pattern."""
+
+import base64
+import os
+from contextlib import contextmanager
+
+import psycopg2
+from databricks.sdk import WorkspaceClient
+from psycopg2.extras import RealDictCursor
+
+_workspace = WorkspaceClient()
+_scope = os.environ.get("LAKEBASE_SECRET_SCOPE", "database")
+_key = os.environ.get("LAKEBASE_SECRET_KEY", "lakebase-url")
+
+
+def _lakebase_url() -> str:
+    secret = _workspace.secrets.get_secret(scope=_scope, key=_key)
+    return base64.b64decode(secret.value).decode("utf-8")
+
+
+@contextmanager
+def get_connection():
+    conn = psycopg2.connect(_lakebase_url(), cursor_factory=RealDictCursor)
+    try:
+        yield conn
+    finally:
+        conn.close()
+
+
+def run_query(sql: str, params: tuple | dict | None = None) -> list[dict]:
+    with get_connection() as conn, conn.cursor() as cursor:
+        cursor.execute(sql, params)
+        return cursor.fetchall()
+
+
+def run_write_returning(sql: str, params: tuple | dict | None = None) -> dict:
+    with get_connection() as conn, conn.cursor() as cursor:
+        cursor.execute(sql, params)
+        row = cursor.fetchone()
+        conn.commit()
+        return row
+
+
+def run_write(sql: str, params: tuple | dict | None = None) -> int:
+    with get_connection() as conn, conn.cursor() as cursor:
+        cursor.execute(sql, params)
+        count = cursor.rowcount
+        conn.commit()
+        return count
