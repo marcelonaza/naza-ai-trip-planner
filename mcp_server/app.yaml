@@ -1,1 +1,16 @@
-Y29tbWFuZDoKICAtICJweXRob24iCiAgLSAidHJpcF9tY3Bfc2VydmVyLnB5IgoKcmVzb3VyY2VzOgogIC0gbmFtZTogcmVxdWlyZW1lbnRzCiAgICBzb3VyY2U6CiAgICAgIHBhdGg6IC4vcmVxdWlyZW1lbnRzLnR4dAoKZW52OgogIC0gbmFtZTogTEFLRUJBU0VfU0VDUkVUX1NDT1BFCiAgICB2YWx1ZTogImRhdGFiYXNlIgogIC0gbmFtZTogTEFLRUJBU0VfU0VDUkVUX0tFWQogICAgdmFsdWU6ICJsYWtlYmFzZS11cmwiCiAgLSBuYW1lOiBFTUJFRERJTkdfTU9ERUwKICAgIHZhbHVlOiAic2VudGVuY2UtdHJhbnNmb3JtZXJzL2FsbC1NaW5pTE0tTDYtdjIiCg==
+command:
+  - "python"
+  - "trip_mcp_server.py"
+
+resources:
+  - name: requirements
+    source:
+      path: ./requirements.txt
+
+env:
+  - name: LAKEBASE_SECRET_SCOPE
+    value: "database"
+  - name: LAKEBASE_SECRET_KEY
+    value: "lakebase-url"
+  - name: EMBEDDING_MODEL
+    value: "sentence-transformers/all-MiniLM-L6-v2"
