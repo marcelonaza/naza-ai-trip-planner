@@ -1,1 +1,55 @@
-IiIiU21hbGwgT3Blbi1NZXRlbyBjbGllbnQgdXNlZCBieSBNQ1AgdG9vbHMuIiIiCgpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRlCgppbXBvcnQgcmVxdWVzdHMKCkdFT0NPRElOR19VUkwgPSAiaHR0cHM6Ly9nZW9jb2RpbmctYXBpLm9wZW4tbWV0ZW8uY29tL3YxL3NlYXJjaCIKRk9SRUNBU1RfVVJMID0gImh0dHBzOi8vYXBpLm9wZW4tbWV0ZW8uY29tL3YxL2ZvcmVjYXN0IgoKCmRlZiBzZWFyY2hfZGVzdGluYXRpb24obmFtZTogc3RyKSAtPiBkaWN0OgogICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5nZXQoCiAgICAgICAgR0VPQ09ESU5HX1VSTCwKICAgICAgICBwYXJhbXM9eyJuYW1lIjogbmFtZSwgImNvdW50IjogMSwgImxhbmd1YWdlIjogImVuIiwgImZvcm1hdCI6ICJqc29uIn0sCiAgICAgICAgdGltZW91dD0yMCwKICAgICkKICAgIHJlc3BvbnNlLnJhaXNlX2Zvcl9zdGF0dXMoKQogICAgcmVzdWx0cyA9IHJlc3BvbnNlLmpzb24oKS5nZXQoInJlc3VsdHMiLCBbXSkKICAgIGlmIG5vdCByZXN1bHRzOgogICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoZiJEZXN0aW5hdGlvbiBub3QgZm91bmQ6IHtuYW1lfSIpCiAgICBpdGVtID0gcmVzdWx0c1swXQogICAgcmV0dXJuIHsKICAgICAgICAibmFtZSI6IGl0ZW1bIm5hbWUiXSwKICAgICAgICAiY291bnRyeSI6IGl0ZW0uZ2V0KCJjb3VudHJ5IiksCiAgICAgICAgImxhdGl0dWRlIjogaXRlbVsibGF0aXR1ZGUiXSwKICAgICAgICAibG9uZ2l0dWRlIjogaXRlbVsibG9uZ2l0dWRlIl0sCiAgICAgICAgInRpbWV6b25lIjogaXRlbS5nZXQoInRpbWV6b25lIiksCiAgICB9CgoKZGVmIGdldF9kYWlseV9mb3JlY2FzdChsYXRpdHVkZTogZmxvYXQsIGxvbmdpdHVkZTogZmxvYXQsIHN0YXJ0X2RhdGU6IGRhdGUsIGVuZF9kYXRlOiBkYXRlKSAtPiBsaXN0W2RpY3RdOgogICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5nZXQoCiAgICAgICAgRk9SRUNBU1RfVVJMLAogICAgICAgIHBhcmFtcz17CiAgICAgICAgICAgICJsYXRpdHVkZSI6IGxhdGl0dWRlLAogICAgICAgICAgICAibG9uZ2l0dWRlIjogbG9uZ2l0dWRlLAogICAgICAgICAgICAic3RhcnRfZGF0ZSI6IHN0YXJ0X2RhdGUuaXNvZm9ybWF0KCksCiAgICAgICAgICAgICJlbmRfZGF0ZSI6IGVuZF9kYXRlLmlzb2Zvcm1hdCgpLAogICAgICAgICAgICAiZGFpbHkiOiAid2VhdGhlcl9jb2RlLHRlbXBlcmF0dXJlXzJtX21heCx0ZW1wZXJhdHVyZV8ybV9taW4scHJlY2lwaXRhdGlvbl9wcm9iYWJpbGl0eV9tYXgiLAogICAgICAgICAgICAidGltZXpvbmUiOiAiYXV0byIsCiAgICAgICAgfSwKICAgICAgICB0aW1lb3V0PTIwLAogICAgKQogICAgcmVzcG9uc2UucmFpc2VfZm9yX3N0YXR1cygpCiAgICBkYWlseSA9IHJlc3BvbnNlLmpzb24oKVsiZGFpbHkiXQogICAgcmV0dXJuIFsKICAgICAgICB7CiAgICAgICAgICAgICJkYXRlIjogZGF5LAogICAgICAgICAgICAid2VhdGhlcl9jb2RlIjogZGFpbHlbIndlYXRoZXJfY29kZSJdW2luZGV4XSwKICAgICAgICAgICAgInRlbXBlcmF0dXJlX21heF9jIjogZGFpbHlbInRlbXBlcmF0dXJlXzJtX21heCJdW2luZGV4XSwKICAgICAgICAgICAgInRlbXBlcmF0dXJlX21pbl9jIjogZGFpbHlbInRlbXBlcmF0dXJlXzJtX21pbiJdW2luZGV4XSwKICAgICAgICAgICAgInByZWNpcGl0YXRpb25fcHJvYmFiaWxpdHkiOiBkYWlseVsicHJlY2lwaXRhdGlvbl9wcm9iYWJpbGl0eV9tYXgiXVtpbmRleF0sCiAgICAgICAgfQogICAgICAgIGZvciBpbmRleCwgZGF5IGluIGVudW1lcmF0ZShkYWlseVsidGltZSJdKQogICAgXQo=
+"""Small Open-Meteo client used by MCP tools."""
+
+from datetime import date
+
+import requests
+
+GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search"
+FORECAST_URL = "https://api.open-meteo.com/v1/forecast"
+
+
+def search_destination(name: str) -> dict:
+    response = requests.get(
+        GEOCODING_URL,
+        params={"name": name, "count": 1, "language": "en", "format": "json"},
+        timeout=20,
+    )
+    response.raise_for_status()
+    results = response.json().get("results", [])
+    if not results:
+        raise ValueError(f"Destination not found: {name}")
+    item = results[0]
+    return {
+        "name": item["name"],
+        "country": item.get("country"),
+        "latitude": item["latitude"],
+        "longitude": item["longitude"],
+        "timezone": item.get("timezone"),
+    }
+
+
+def get_daily_forecast(latitude: float, longitude: float, start_date: date, end_date: date) -> list[dict]:
+    response = requests.get(
+        FORECAST_URL,
+        params={
+            "latitude": latitude,
+            "longitude": longitude,
+            "start_date": start_date.isoformat(),
+            "end_date": end_date.isoformat(),
+            "daily": "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",
+            "timezone": "auto",
+        },
+        timeout=20,
+    )
+    response.raise_for_status()
+    daily = response.json()["daily"]
+    return [
+        {
+            "date": day,
+            "weather_code": daily["weather_code"][index],
+            "temperature_max_c": daily["temperature_2m_max"][index],
+            "temperature_min_c": daily["temperature_2m_min"][index],
+            "precipitation_probability": daily["precipitation_probability_max"][index],
+        }
+        for index, day in enumerate(daily["time"])
+    ]
