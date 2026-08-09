@@ -1,1 +1,175 @@
-IiIiV2VhdGhlci1hd2FyZSB0cmlwLXBsYW5uaW5nIE1DUCBzZXJ2ZXIgZm9yIERhdGFicmlja3MgQWdlbnQgQnJpY2tzLiIiIgoKaW1wb3J0IGxvZ2dpbmcKaW1wb3J0IG9zCmZyb20gZGF0ZXRpbWUgaW1wb3J0IGRhdGV0aW1lCgpmcm9tIGZhc3RtY3AgaW1wb3J0IEZhc3RNQ1AKZnJvbSBzZW50ZW5jZV90cmFuc2Zvcm1lcnMgaW1wb3J0IFNlbnRlbmNlVHJhbnNmb3JtZXIKCmltcG9ydCBsYWtlYmFzZQppbXBvcnQgd2VhdGhlcl9jbGllbnQKCmxvZ2dpbmcuYmFzaWNDb25maWcobGV2ZWw9bG9nZ2luZy5JTkZPKQpsb2dnZXIgPSBsb2dnaW5nLmdldExvZ2dlcigidHJpcC1wbGFubmVyLW1jcCIpCgpFTUJFRERJTkdfTU9ERUwgPSBvcy5lbnZpcm9uLmdldCgKICAgICJFTUJFRERJTkdfTU9ERUwiLCAic2VudGVuY2UtdHJhbnNmb3JtZXJzL2FsbC1NaW5pTE0tTDYtdjIiCikKX21vZGVsID0gTm9uZQptY3AgPSBGYXN0TUNQKCJuYXphLWFpLXRyaXAtcGxhbm5lciIpCgoKZGVmIGdldF9lbWJlZGRpbmdfbW9kZWwoKSAtPiBTZW50ZW5jZVRyYW5zZm9ybWVyOgogICAgZ2xvYmFsIF9tb2RlbAogICAgaWYgX21vZGVsIGlzIE5vbmU6CiAgICAgICAgX21vZGVsID0gU2VudGVuY2VUcmFuc2Zvcm1lcihFTUJFRERJTkdfTU9ERUwpCiAgICByZXR1cm4gX21vZGVsCgoKQG1jcC50b29sCmRlZiBzZWFyY2hfZGVzdGluYXRpb24obmFtZTogc3RyKSAtPiBkaWN0OgogICAgIiIiUmVzb2x2ZSBhIGRlc3RpbmF0aW9uIG5hbWUgdG8gY29vcmRpbmF0ZXMgdXNpbmcgT3Blbi1NZXRlbyBHZW9jb2RpbmcuIiIiCiAgICByZXR1cm4gd2VhdGhlcl9jbGllbnQuc2VhcmNoX2Rlc3RpbmF0aW9uKG5hbWUpCgoKQG1jcC50b29sCmRlZiBnZXRfd2VhdGhlcl9mb3JlY2FzdCh0cmlwX2lkOiBpbnQpIC0+IGxpc3RbZGljdF06CiAgICAiIiJHZXQgdGhlIGN1cnJlbnQgZGFpbHkgT3Blbi1NZXRlbyBmb3JlY2FzdCBmb3IgYSBzdG9yZWQgdHJpcC4iIiIKICAgIHRyaXBzID0gbGFrZWJhc2UucnVuX3F1ZXJ5KAogICAgICAgICJTRUxFQ1QgbGF0aXR1ZGUsIGxvbmdpdHVkZSwgc3RhcnRfZGF0ZSwgZW5kX2RhdGUgRlJPTSB0cmlwcyBXSEVSRSB0cmlwX2lkID0gJXMiLAogICAgICAgICh0cmlwX2lkLCksCiAgICApCiAgICBpZiBub3QgdHJpcHM6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcihmIlRyaXAge3RyaXBfaWR9IGRvZXMgbm90IGV4aXN0IikKICAgIHRyaXAgPSB0cmlwc1swXQogICAgcmV0dXJuIHdlYXRoZXJfY2xpZW50LmdldF9kYWlseV9mb3JlY2FzdCgKICAgICAgICB0cmlwWyJsYXRpdHVkZSJdLCB0cmlwWyJsb25naXR1ZGUiXSwgdHJpcFsic3RhcnRfZGF0ZSJdLCB0cmlwWyJlbmRfZGF0ZSJdCiAgICApCgoKQG1jcC50b29sCmRlZiBzZW1hbnRpY19zZWFyY2hfYWN0aXZpdGllcyhxdWVyeTogc3RyLCBkZXN0aW5hdGlvbl9uYW1lOiBzdHIgPSAiTGlzYm9uIiwgbGltaXQ6IGludCA9IDUpIC0+IGxpc3RbZGljdF06CiAgICAiIiJGaW5kIGFjdGl2aXRpZXMgYnkgc2VtYW50aWMgbWVhbmluZyB1c2luZyBMYWtlYmFzZSBwZ3ZlY3RvciBjb3NpbmUgZGlzdGFuY2UuIiIiCiAgICBzYWZlX2xpbWl0ID0gbWF4KDEsIG1pbihsaW1pdCwgMTApKQogICAgdmVjdG9yID0gZ2V0X2VtYmVkZGluZ19tb2RlbCgpLmVuY29kZShxdWVyeSkudG9saXN0KCkKICAgIHZlY3Rvcl9saXRlcmFsID0gIlsiICsgIiwiLmpvaW4oc3RyKHZhbHVlKSBmb3IgdmFsdWUgaW4gdmVjdG9yKSArICJdIgogICAgcmV0dXJuIGxha2ViYXNlLnJ1bl9xdWVyeSgKICAgICAgICAiIiIKICAgICAgICBTRUxFQ1QgYS5hY3Rpdml0eV9pZCwgYS5uYW1lLCBhLmNhdGVnb3J5LCBhLmluZG9vciwgYS5kZXNjcmlwdGlvbiwKICAgICAgICAgICAgICAgUk9VTkQoKDEgLSAoZC5lbWJlZGRpbmcgPD0+ICVzOjp2ZWN0b3IpKTo6bnVtZXJpYywgNCkgQVMgc2ltaWxhcml0eQogICAgICAgIEZST00gYWN0aXZpdHlfZG9jdW1lbnRzIGQKICAgICAgICBKT0lOIGFjdGl2aXRpZXMgYSBPTiBhLmFjdGl2aXR5X2lkID0gZC5hY3Rpdml0eV9pZAogICAgICAgIFdIRVJFIGEuZGVzdGluYXRpb25fbmFtZSA9ICVzIEFORCBkLmVtYmVkZGluZyBJUyBOT1QgTlVMTAogICAgICAgIE9SREVSIEJZIGQuZW1iZWRkaW5nIDw9PiAlczo6dmVjdG9yCiAgICAgICAgTElNSVQgJXMKICAgICAgICAiIiIsCiAgICAgICAgKHZlY3Rvcl9saXRlcmFsLCBkZXN0aW5hdGlvbl9uYW1lLCB2ZWN0b3JfbGl0ZXJhbCwgc2FmZV9saW1pdCksCiAgICApCgoKQG1jcC50b29sCmRlZiBnZXRfaXRpbmVyYXJ5KHRyaXBfaWQ6IGludCkgLT4gbGlzdFtkaWN0XToKICAgICIiIlJlYWQgdGhlIGN1cnJlbnQgcGVyc2lzdGVkIGl0aW5lcmFyeSBmb3IgYSB0cmlwLiIiIgogICAgcmV0dXJuIGxha2ViYXNlLnJ1bl9xdWVyeSgKICAgICAgICAiIiIKICAgICAgICBTRUxFQ1QgaS5pdGluZXJhcnlfaXRlbV9pZCwgaS5zY2hlZHVsZWRfYXQsIGkuZHVyYXRpb25fbWludXRlcywKICAgICAgICAgICAgICAgaS5yYXRpb25hbGUsIGkuc3RhdHVzLCBhLmFjdGl2aXR5X2lkLCBhLm5hbWUgQVMgYWN0aXZpdHlfbmFtZSwKICAgICAgICAgICAgICAgYS5jYXRlZ29yeSwgYS5pbmRvb3IKICAgICAgICBGUk9NIGl0aW5lcmFyeV9pdGVtcyBpCiAgICAgICAgSk9JTiBhY3Rpdml0aWVzIGEgT04gYS5hY3Rpdml0eV9pZCA9IGkuYWN0aXZpdHlfaWQKICAgICAgICBXSEVSRSBpLnRyaXBfaWQgPSAlcwogICAgICAgIE9SREVSIEJZIGkuc2NoZWR1bGVkX2F0CiAgICAgICAgIiIiLAogICAgICAgICh0cmlwX2lkLCksCiAgICApCgoKQG1jcC50b29sCmRlZiBhZGRfaXRpbmVyYXJ5X2l0ZW0oCiAgICB0cmlwX2lkOiBpbnQsCiAgICBhY3Rpdml0eV9pZDogaW50LAogICAgc2NoZWR1bGVkX2F0OiBzdHIsCiAgICBkdXJhdGlvbl9taW51dGVzOiBpbnQgPSAxMjAsCiAgICByYXRpb25hbGU6IHN0ciA9ICJBZGRlZCBieSB0aGUgdHJhdmVsIGFnZW50IiwKKSAtPiBkaWN0OgogICAgIiIiQWRkIGFuIGFjdGl2aXR5IHRvIHRoZSBpdGluZXJhcnkgYW5kIHBlcnNpc3QgdGhlIGNoYW5nZSBpbiBMYWtlYmFzZS4iIiIKICAgIHBhcnNlZF90aW1lID0gZGF0ZXRpbWUuZnJvbWlzb2Zvcm1hdChzY2hlZHVsZWRfYXQucmVwbGFjZSgiWiIsICIrMDA6MDAiKSkKICAgIGlmIGR1cmF0aW9uX21pbnV0ZXMgPD0gMCBvciBkdXJhdGlvbl9taW51dGVzID4gMTQ0MDoKICAgICAgICByYWlzZSBWYWx1ZUVycm9yKCJkdXJhdGlvbl9taW51dGVzIG11c3QgYmUgYmV0d2VlbiAxIGFuZCAxNDQwIikKICAgIHJldHVybiBsYWtlYmFzZS5ydW5fd3JpdGVfcmV0dXJuaW5nKAogICAgICAgICIiIgogICAgICAgIElOU0VSVCBJTlRPIGl0aW5lcmFyeV9pdGVtcwogICAgICAgICAgICAodHJpcF9pZCwgYWN0aXZpdHlfaWQsIHNjaGVkdWxlZF9hdCwgZHVyYXRpb25fbWludXRlcywgcmF0aW9uYWxlKQogICAgICAgIFZBTFVFUyAoJXMsICVzLCAlcywgJXMsICVzKQogICAgICAgIFJFVFVSTklORyBpdGluZXJhcnlfaXRlbV9pZCwgdHJpcF9pZCwgYWN0aXZpdHlfaWQsIHNjaGVkdWxlZF9hdCwKICAgICAgICAgICAgICAgICAgZHVyYXRpb25fbWludXRlcywgcmF0aW9uYWxlLCBzdGF0dXMKICAgICAgICAiIiIsCiAgICAgICAgKHRyaXBfaWQsIGFjdGl2aXR5X2lkLCBwYXJzZWRfdGltZSwgZHVyYXRpb25fbWludXRlcywgcmF0aW9uYWxlKSwKICAgICkKCgpAbWNwLnRvb2wKZGVmIG1vdmVfaXRpbmVyYXJ5X2l0ZW0oaXRpbmVyYXJ5X2l0ZW1faWQ6IGludCwgbmV3X3NjaGVkdWxlZF9hdDogc3RyLCByZWFzb246IHN0cikgLT4gZGljdDoKICAgICIiIlJlc2NoZWR1bGUgYW4gaXRpbmVyYXJ5IGl0ZW0gYW5kIHJlY29yZCB0aGUgd2VhdGhlci1hd2FyZSByZWFzb24uIiIiCiAgICBwYXJzZWRfdGltZSA9IGRhdGV0aW1lLmZyb21pc29mb3JtYXQobmV3X3NjaGVkdWxlZF9hdC5yZXBsYWNlKCJaIiwgIiswMDowMCIpKQogICAgcm93ID0gbGFrZWJhc2UucnVuX3dyaXRlX3JldHVybmluZygKICAgICAgICAiIiIKICAgICAgICBVUERBVEUgaXRpbmVyYXJ5X2l0ZW1zCiAgICAgICAgU0VUIHNjaGVkdWxlZF9hdCA9ICVzLCByYXRpb25hbGUgPSAlcwogICAgICAgIFdIRVJFIGl0aW5lcmFyeV9pdGVtX2lkID0gJXMKICAgICAgICBSRVRVUk5JTkcgaXRpbmVyYXJ5X2l0ZW1faWQsIHRyaXBfaWQsIGFjdGl2aXR5X2lkLCBzY2hlZHVsZWRfYXQsIHJhdGlvbmFsZSwgc3RhdHVzCiAgICAgICAgIiIiLAogICAgICAgIChwYXJzZWRfdGltZSwgcmVhc29uLCBpdGluZXJhcnlfaXRlbV9pZCksCiAgICApCiAgICBpZiByb3cgaXMgTm9uZToKICAgICAgICByYWlzZSBWYWx1ZUVycm9yKGYiSXRpbmVyYXJ5IGl0ZW0ge2l0aW5lcmFyeV9pdGVtX2lkfSBkb2VzIG5vdCBleGlzdCIpCiAgICByZXR1cm4gcm93CgoKQG1jcC50b29sCmRlZiByZW1vdmVfaXRpbmVyYXJ5X2l0ZW0oaXRpbmVyYXJ5X2l0ZW1faWQ6IGludCkgLT4gZGljdDoKICAgICIiIlJlbW92ZSBhbiBpdGluZXJhcnkgaXRlbSBmcm9tIExha2ViYXNlLiIiIgogICAgcm93ID0gbGFrZWJhc2UucnVuX3dyaXRlX3JldHVybmluZygKICAgICAgICAiREVMRVRFIEZST00gaXRpbmVyYXJ5X2l0ZW1zIFdIRVJFIGl0aW5lcmFyeV9pdGVtX2lkID0gJXMgUkVUVVJOSU5HIGl0aW5lcmFyeV9pdGVtX2lkLCB0cmlwX2lkLCBhY3Rpdml0eV9pZCIsCiAgICAgICAgKGl0aW5lcmFyeV9pdGVtX2lkLCksCiAgICApCiAgICBpZiByb3cgaXMgTm9uZToKICAgICAgICByYWlzZSBWYWx1ZUVycm9yKGYiSXRpbmVyYXJ5IGl0ZW0ge2l0aW5lcmFyeV9pdGVtX2lkfSBkb2VzIG5vdCBleGlzdCIpCiAgICByZXR1cm4geyJyZW1vdmVkIjogVHJ1ZSwgKipyb3d9CgoKQG1jcC50b29sCmRlZiBnZW5lcmF0ZV9wYWNraW5nX2xpc3QodHJpcF9pZDogaW50KSAtPiBsaXN0W2RpY3RdOgogICAgIiIiQ3JlYXRlIGFuZCBwZXJzaXN0IGEgZGV0ZXJtaW5pc3RpYyBwYWNraW5nIGxpc3QgZnJvbSBzdG9yZWQgd2VhdGhlciBkYXRhLiIiIgogICAgd2VhdGhlciA9IGxha2ViYXNlLnJ1bl9xdWVyeSgKICAgICAgICAiIiIKICAgICAgICBTRUxFQ1QgTUFYKHByZWNpcGl0YXRpb25fcHJvYmFiaWxpdHkpIEFTIG1heF9yYWluLAogICAgICAgICAgICAgICBNSU4odGVtcGVyYXR1cmVfYykgQVMgbWluX3RlbXBlcmF0dXJlCiAgICAgICAgRlJPTSB3ZWF0aGVyX3NuYXBzaG90cyBXSEVSRSB0cmlwX2lkID0gJXMKICAgICAgICAiIiIsCiAgICAgICAgKHRyaXBfaWQsKSwKICAgIClbMF0KICAgIGl0ZW1zID0gWygiQ29tZm9ydGFibGUgd2Fsa2luZyBzaG9lcyIsICJVc2VmdWwgZm9yIGNpdHkgd2Fsa2luZyBhbmQgb3V0ZG9vciBhY3Rpdml0aWVzIildCiAgICBpZiB3ZWF0aGVyWyJtYXhfcmFpbiJdIGlzIG5vdCBOb25lIGFuZCB3ZWF0aGVyWyJtYXhfcmFpbiJdID49IDQwOgogICAgICAgIGl0ZW1zLmFwcGVuZCgoIkNvbXBhY3QgdW1icmVsbGEiLCAiUmFpbiBwcm9iYWJpbGl0eSBpcyBhdCBsZWFzdCA0MCUiKSkKICAgIGlmIHdlYXRoZXJbIm1pbl90ZW1wZXJhdHVyZSJdIGlzIG5vdCBOb25lIGFuZCBmbG9hdCh3ZWF0aGVyWyJtaW5fdGVtcGVyYXR1cmUiXSkgPCAxNToKICAgICAgICBpdGVtcy5hcHBlbmQoKCJMaWdodCBqYWNrZXQiLCAiRm9yZWNhc3QgdGVtcGVyYXR1cmUgZmFsbHMgYmVsb3cgMTXCsEMiKSkKCiAgICBmb3IgaXRlbV9uYW1lLCByZWFzb24gaW4gaXRlbXM6CiAgICAgICAgbGFrZWJhc2UucnVuX3dyaXRlKAogICAgICAgICAgICAiIiIKICAgICAgICAgICAgSU5TRVJUIElOVE8gcGFja2luZ19pdGVtcyAodHJpcF9pZCwgaXRlbV9uYW1lLCByZWFzb24pCiAgICAgICAgICAgIFZBTFVFUyAoJXMsICVzLCAlcykKICAgICAgICAgICAgT04gQ09ORkxJQ1QgKHRyaXBfaWQsIGl0ZW1fbmFtZSkgRE8gVVBEQVRFIFNFVCByZWFzb24gPSBFWENMVURFRC5yZWFzb24KICAgICAgICAgICAgIiIiLAogICAgICAgICAgICAodHJpcF9pZCwgaXRlbV9uYW1lLCByZWFzb24pLAogICAgICAgICkKICAgIHJldHVybiBsYWtlYmFzZS5ydW5fcXVlcnkoCiAgICAgICAgIlNFTEVDVCBwYWNraW5nX2l0ZW1faWQsIGl0ZW1fbmFtZSwgcmVhc29uLCBwYWNrZWQgRlJPTSBwYWNraW5nX2l0ZW1zIFdIRVJFIHRyaXBfaWQgPSAlcyBPUkRFUiBCWSBpdGVtX25hbWUiLAogICAgICAgICh0cmlwX2lkLCksCiAgICApCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIG1jcC5ydW4odHJhbnNwb3J0PSJodHRwIiwgaG9zdD0iMC4wLjAuMCIsIHBvcnQ9aW50KG9zLmVudmlyb24uZ2V0KCJEQVRBQlJJQ0tTX0FQUF9QT1JUIiwgIjgwMDAiKSkpCg==
+"""Weather-aware trip-planning MCP server for Databricks Agent Bricks."""
+
+import logging
+import os
+from datetime import datetime
+
+from fastmcp import FastMCP
+from sentence_transformers import SentenceTransformer
+
+import lakebase
+import weather_client
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("trip-planner-mcp")
+
+EMBEDDING_MODEL = os.environ.get(
+    "EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
+)
+_model = None
+mcp = FastMCP("naza-ai-trip-planner")
+
+
+def get_embedding_model() -> SentenceTransformer:
+    global _model
+    if _model is None:
+        _model = SentenceTransformer(EMBEDDING_MODEL)
+    return _model
+
+
+@mcp.tool
+def search_destination(name: str) -> dict:
+    """Resolve a destination name to coordinates using Open-Meteo Geocoding."""
+    return weather_client.search_destination(name)
+
+
+@mcp.tool
+def get_weather_forecast(trip_id: int) -> list[dict]:
+    """Get the current daily Open-Meteo forecast for a stored trip."""
+    trips = lakebase.run_query(
+        "SELECT latitude, longitude, start_date, end_date FROM trips WHERE trip_id = %s",
+        (trip_id,),
+    )
+    if not trips:
+        raise ValueError(f"Trip {trip_id} does not exist")
+    trip = trips[0]
+    return weather_client.get_daily_forecast(
+        trip["latitude"], trip["longitude"], trip["start_date"], trip["end_date"]
+    )
+
+
+@mcp.tool
+def semantic_search_activities(query: str, destination_name: str = "Lisbon", limit: int = 5) -> list[dict]:
+    """Find activities by semantic meaning using Lakebase pgvector cosine distance."""
+    safe_limit = max(1, min(limit, 10))
+    vector = get_embedding_model().encode(query).tolist()
+    vector_literal = "[" + ",".join(str(value) for value in vector) + "]"
+    return lakebase.run_query(
+        """
+        SELECT a.activity_id, a.name, a.category, a.indoor, a.description,
+               ROUND((1 - (d.embedding <=> %s::vector))::numeric, 4) AS similarity
+        FROM activity_documents d
+        JOIN activities a ON a.activity_id = d.activity_id
+        WHERE a.destination_name = %s AND d.embedding IS NOT NULL
+        ORDER BY d.embedding <=> %s::vector
+        LIMIT %s
+        """,
+        (vector_literal, destination_name, vector_literal, safe_limit),
+    )
+
+
+@mcp.tool
+def get_itinerary(trip_id: int) -> list[dict]:
+    """Read the current persisted itinerary for a trip."""
+    return lakebase.run_query(
+        """
+        SELECT i.itinerary_item_id, i.scheduled_at, i.duration_minutes,
+               i.rationale, i.status, a.activity_id, a.name AS activity_name,
+               a.category, a.indoor
+        FROM itinerary_items i
+        JOIN activities a ON a.activity_id = i.activity_id
+        WHERE i.trip_id = %s
+        ORDER BY i.scheduled_at
+        """,
+        (trip_id,),
+    )
+
+
+@mcp.tool
+def add_itinerary_item(
+    trip_id: int,
+    activity_id: int,
+    scheduled_at: str,
+    duration_minutes: int = 120,
+    rationale: str = "Added by the travel agent",
+) -> dict:
+    """Add an activity to the itinerary and persist the change in Lakebase."""
+    parsed_time = datetime.fromisoformat(scheduled_at.replace("Z", "+00:00"))
+    if duration_minutes <= 0 or duration_minutes > 1440:
+        raise ValueError("duration_minutes must be between 1 and 1440")
+    return lakebase.run_write_returning(
+        """
+        INSERT INTO itinerary_items
+            (trip_id, activity_id, scheduled_at, duration_minutes, rationale)
+        VALUES (%s, %s, %s, %s, %s)
+        RETURNING itinerary_item_id, trip_id, activity_id, scheduled_at,
+                  duration_minutes, rationale, status
+        """,
+        (trip_id, activity_id, parsed_time, duration_minutes, rationale),
+    )
+
+
+@mcp.tool
+def move_itinerary_item(itinerary_item_id: int, new_scheduled_at: str, reason: str) -> dict:
+    """Reschedule an itinerary item and record the weather-aware reason."""
+    parsed_time = datetime.fromisoformat(new_scheduled_at.replace("Z", "+00:00"))
+    row = lakebase.run_write_returning(
+        """
+        UPDATE itinerary_items
+        SET scheduled_at = %s, rationale = %s
+        WHERE itinerary_item_id = %s
+        RETURNING itinerary_item_id, trip_id, activity_id, scheduled_at, rationale, status
+        """,
+        (parsed_time, reason, itinerary_item_id),
+    )
+    if row is None:
+        raise ValueError(f"Itinerary item {itinerary_item_id} does not exist")
+    return row
+
+
+@mcp.tool
+def remove_itinerary_item(itinerary_item_id: int) -> dict:
+    """Remove an itinerary item from Lakebase."""
+    row = lakebase.run_write_returning(
+        "DELETE FROM itinerary_items WHERE itinerary_item_id = %s RETURNING itinerary_item_id, trip_id, activity_id",
+        (itinerary_item_id,),
+    )
+    if row is None:
+        raise ValueError(f"Itinerary item {itinerary_item_id} does not exist")
+    return {"removed": True, **row}
+
+
+@mcp.tool
+def generate_packing_list(trip_id: int) -> list[dict]:
+    """Create and persist a deterministic packing list from stored weather data."""
+    weather = lakebase.run_query(
+        """
+        SELECT MAX(precipitation_probability) AS max_rain,
+               MIN(temperature_c) AS min_temperature
+        FROM weather_snapshots WHERE trip_id = %s
+        """,
+        (trip_id,),
+    )[0]
+    items = [("Comfortable walking shoes", "Useful for city walking and outdoor activities")]
+    if weather["max_rain"] is not None and weather["max_rain"] >= 40:
+        items.append(("Compact umbrella", "Rain probability is at least 40%"))
+    if weather["min_temperature"] is not None and float(weather["min_temperature"]) < 15:
+        items.append(("Light jacket", "Forecast temperature falls below 15°C"))
+
+    for item_name, reason in items:
+        lakebase.run_write(
+            """
+            INSERT INTO packing_items (trip_id, item_name, reason)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (trip_id, item_name) DO UPDATE SET reason = EXCLUDED.reason
+            """,
+            (trip_id, item_name, reason),
+        )
+    return lakebase.run_query(
+        "SELECT packing_item_id, item_name, reason, packed FROM packing_items WHERE trip_id = %s ORDER BY item_name",
+        (trip_id,),
+    )
+
+
+if __name__ == "__main__":
+    mcp.run(transport="http", host="0.0.0.0", port=int(os.environ.get("DATABRICKS_APP_PORT", "8000")))
