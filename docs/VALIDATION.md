@@ -1,1 +1,79 @@
-IyBWYWxpZGF0aW9uIGFuZCBFdmlkZW5jZSBDaGVja2xpc3QKCiMjIDEuIExha2ViYXNlIHNjaGVtYQoKYGBgc3FsClNFTEVDVCB0YWJsZV9uYW1lCkZST00gaW5mb3JtYXRpb25fc2NoZW1hLnRhYmxlcwpXSEVSRSB0YWJsZV9zY2hlbWEgPSAncHVibGljJwogIEFORCB0YWJsZV9uYW1lIElOICgndXNlcnMnLCd0cmlwcycsJ2FjdGl2aXRpZXMnLCd3ZWF0aGVyX3NuYXBzaG90cycsJ2l0aW5lcmFyeV9pdGVtcycsJ3BhY2tpbmdfaXRlbXMnLCdhY3Rpdml0eV9kb2N1bWVudHMnKQpPUkRFUiBCWSB0YWJsZV9uYW1lOwpgYGAKCkNhcHR1cmUgdGhlIHNldmVuIHRhYmxlcywgdGhlbiBjYXB0dXJlIFBLL0ZLIGNvbnN0cmFpbnRzLgoKIyMgMi4gU3BhcmsgcGlwZWxpbmUKCi0gQ2FwdHVyZSB0aGUgQnJvbnplIHRhYmxlIHdyaXRlLgotIENhcHR1cmUgdGhlIFNpbHZlciBgZ3JvdXBCeWAgcmVzdWx0LgotIENhcHR1cmUgdGhlIFdpa2ltZWRpYSB0ZXh0LWxlbmd0aCByZXN1bHQuCi0gQ2FwdHVyZSB0aGUgZmluYWwgc3VjY2Vzc2Z1bCBwaXBlbGluZSBtZXNzYWdlLgoKYGBgc3FsClNFTEVDVCBDT1VOVCgqKSBBUyB3ZWF0aGVyX3Jvd3MgRlJPTSB3ZWF0aGVyX3NuYXBzaG90czsKU0VMRUNUIENPVU5UKCopIEFTIGVtYmVkZGVkX2RvY3VtZW50cyBGUk9NIGFjdGl2aXR5X2RvY3VtZW50cyBXSEVSRSBlbWJlZGRpbmcgSVMgTk9UIE5VTEw7CmBgYAoKIyMgMy4gRnJvbnRlbmQKCi0gT3ZlcnZpZXcgc2hvd2luZyB0aGUgdHJpcCBhbmQgYWN0aXZpdGllcy4KLSBXZWF0aGVyIGNhcmRzIHBvcHVsYXRlZCBmcm9tIExha2ViYXNlLgotIEl0aW5lcmFyeSBhbmQgcGFja2luZyBsaXN0IGFmdGVyIGFnZW50IHdyaXRlcy4KCiMjIDQuIEFnZW50IHJlYWQgdGVzdHMKClVzZSB0aGVzZSBwcm9tcHRzIGluIEFnZW50IEJyaWNrczoKCmBgYHRleHQKRmluZCB0d28gaW5kb29yIGFjdGl2aXRpZXMgaW4gTGlzYm9uIHN1aXRhYmxlIGZvciBhIHJhaW55IGFmdGVybm9vbi4gRXhwbGFpbiB3aHkgdGhleSBtYXRjaC4KYGBgCgpgYGB0ZXh0ClNob3cgdGhlIGN1cnJlbnQgd2VhdGhlciBmb3JlY2FzdCBhbmQgaXRpbmVyYXJ5IGZvciB0cmlwIDEuCmBgYAoKIyMgNS4gQWdlbnQgd3JpdGUgYW5kIHBlcnNpc3RlbmNlIHRlc3RzCgpgYGB0ZXh0CkFkZCBKZXLDs25pbW9zIE1vbmFzdGVyeSB0byB0cmlwIDEgZm9yIHRvbW9ycm93IGF0IDE0OjAwLCBmb3IgMTIwIG1pbnV0ZXMuIEV4cGxhaW4gdGhhdCBpdCBpcyBhbiBpbmRvb3IgYWx0ZXJuYXRpdmUgaWYgcmFpbiBpcyBsaWtlbHkuCmBgYAoKUmVmcmVzaCB0aGUgZnJvbnRlbmQgYW5kIGNhcHR1cmUgdGhlIG5ldyBpdGVtLiBUaGVuOgoKYGBgdGV4dApNb3ZlIHRoYXQgaXRpbmVyYXJ5IGl0ZW0gdG8gdG9tb3Jyb3cgYXQgMTY6MDAgYmVjYXVzZSB0aGUgbW9ybmluZyB3ZWF0aGVyIGlzIGJldHRlciBmb3Igb3V0ZG9vciBhY3Rpdml0aWVzLgpgYGAKCmBgYHRleHQKR2VuZXJhdGUgYW5kIHNhdmUgYSBwYWNraW5nIGxpc3QgZm9yIHRyaXAgMSB1c2luZyB0aGUgc3RvcmVkIGZvcmVjYXN0LgpgYGAKCkNhcHR1cmUgdGhlIGFnZW50IHJlc3BvbnNlLCByZWZyZXNoZWQgZnJvbnRlbmQsIGFuZCB0aGVzZSBTUUwgcmVzdWx0czoKCmBgYHNxbApTRUxFQ1QgKiBGUk9NIGl0aW5lcmFyeV9pdGVtcyBPUkRFUiBCWSBjcmVhdGVkX2F0IERFU0M7ClNFTEVDVCAqIEZST00gcGFja2luZ19pdGVtcyBPUkRFUiBCWSBpdGVtX25hbWU7CmBgYAoKIyMgNi4gRmluYWwgc3VibWlzc2lvbiBnYXRlCgotIERhdGFicmlja3MgZnJvbnRlbmQgQXBwIFVSTAotIE1DUCBBcHAgVVJMCi0gR2l0SHViIHJlcG9zaXRvcnkgVVJMCi0gU3Bhcmsgbm90ZWJvb2sgYW5kIHN1Y2Nlc3NmdWwtcnVuIGV2aWRlbmNlCi0gTGFrZWJhc2UgZGF0YSBhbmQgY29uc3RyYWludCBldmlkZW5jZQotIFNlbWFudGljIHJldHJpZXZhbCBldmlkZW5jZQotIEFnZW50IHJlYWQvd3JpdGUgZXZpZGVuY2UKLSBQZXJzaXN0ZW5jZS1hZnRlci1yZWZyZXNoIGV2aWRlbmNlCi0gUkVBRE1FIGFuZCBwcm9qZWN0IHJlZmxlY3Rpb24KLSBObyBzZWNyZXRzIGluIHJlcG9zaXRvcnkgb3Igc2NyZWVuc2hvdHMK
+# Validation and Evidence Checklist
+
+## 1. Lakebase schema
+
+```sql
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public'
+  AND table_name IN ('users','trips','activities','weather_snapshots','itinerary_items','packing_items','activity_documents')
+ORDER BY table_name;
+```
+
+Capture the seven tables, then capture PK/FK constraints.
+
+## 2. Spark pipeline
+
+- Capture the Bronze table write.
+- Capture the Silver `groupBy` result.
+- Capture the Wikimedia text-length result.
+- Capture the final successful pipeline message.
+
+```sql
+SELECT COUNT(*) AS weather_rows FROM weather_snapshots;
+SELECT COUNT(*) AS embedded_documents FROM activity_documents WHERE embedding IS NOT NULL;
+```
+
+## 3. Frontend
+
+- Overview showing the trip and activities.
+- Weather cards populated from Lakebase.
+- Itinerary and packing list after agent writes.
+
+## 4. Agent read tests
+
+Use these prompts in Agent Bricks:
+
+```text
+Find two indoor activities in Lisbon suitable for a rainy afternoon. Explain why they match.
+```
+
+```text
+Show the current weather forecast and itinerary for trip 1.
+```
+
+## 5. Agent write and persistence tests
+
+```text
+Add Jerónimos Monastery to trip 1 for tomorrow at 14:00, for 120 minutes. Explain that it is an indoor alternative if rain is likely.
+```
+
+Refresh the frontend and capture the new item. Then:
+
+```text
+Move that itinerary item to tomorrow at 16:00 because the morning weather is better for outdoor activities.
+```
+
+```text
+Generate and save a packing list for trip 1 using the stored forecast.
+```
+
+Capture the agent response, refreshed frontend, and these SQL results:
+
+```sql
+SELECT * FROM itinerary_items ORDER BY created_at DESC;
+SELECT * FROM packing_items ORDER BY item_name;
+```
+
+## 6. Final submission gate
+
+- Databricks frontend App URL
+- MCP App URL
+- GitHub repository URL
+- Spark notebook and successful-run evidence
+- Lakebase data and constraint evidence
+- Semantic retrieval evidence
+- Agent read/write evidence
+- Persistence-after-refresh evidence
+- README and project reflection
+- No secrets in repository or screenshots
