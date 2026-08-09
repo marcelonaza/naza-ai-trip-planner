@@ -43,4 +43,30 @@ docs/           Requirement, test, and screenshot checklist
 5. Deploy `frontend/` as a second Databricks App.
 6. Execute the tests in `docs/VALIDATION.md` and capture every required screenshot.
 
+Detailed Agent Bricks instructions and the exact system prompt are in
+[`docs/AGENT_SETUP.md`](docs/AGENT_SETUP.md).
+
+## Local verification
+
+The deterministic tests do not require Lakebase, Databricks credentials, or
+network access:
+
+```bash
+python -m unittest discover -s tests -v
+python -m compileall -q frontend mcp_server pipeline tests
+```
+
+The external APIs, Spark/Delta writes, Lakebase synchronization, MCP discovery,
+and Databricks App rendering are integration tests and must be verified in the
+Databricks workspace using [`docs/VALIDATION.md`](docs/VALIDATION.md).
+
+## Demo scope
+
+- One demo user and one three-day Lisbon trip.
+- Six activities sourced from Wikimedia descriptions.
+- Hourly weather from Open-Meteo.
+- Seven related Lakebase tables.
+- Eight MCP tools covering retrieval and persisted itinerary actions.
+- Two Databricks Apps: the MCP server and the frontend dashboard.
+
 No credentials or personal access tokens belong in this repository.
