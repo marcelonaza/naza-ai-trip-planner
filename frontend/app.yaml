@@ -1,1 +1,9 @@
-Y29tbWFuZDoKICAtICJweXRob24iCiAgLSAiYXBwLnB5IgoKZW52OgogIC0gbmFtZTogTEFLRUJBU0VfU0VDUkVUX1NDT1BFCiAgICB2YWx1ZTogImRhdGFiYXNlIgogIC0gbmFtZTogTEFLRUJBU0VfU0VDUkVUX0tFWQogICAgdmFsdWU6ICJsYWtlYmFzZS11cmwiCg==
+command:
+  - "python"
+  - "app.py"
+
+env:
+  - name: LAKEBASE_SECRET_SCOPE
+    value: "database"
+  - name: LAKEBASE_SECRET_KEY
+    value: "lakebase-url"
