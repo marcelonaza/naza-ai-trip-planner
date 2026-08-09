@@ -1,1 +1,170 @@
-IyBEYXRhYnJpY2tzIG5vdGVib29rIHNvdXJjZQojIE1BR0lDICVtZAojIE1BR0lDICMgT3Blbi1NZXRlbyArIFdpa2ltZWRpYSAtPiBTcGFyayAtPiBEZWx0YSAtPiBMYWtlYmFzZSArIHBndmVjdG9yCiMgTUFHSUMKIyBNQUdJQyBUaGlzIGNhcHN0b25lIHBpcGVsaW5lIHBlcmZvcm1zIHJlYWwgU3BhcmsgdHJhbnNmb3JtYXRpb25zIGFuZCBwcmVzZXJ2ZXMKIyBNQUdJQyBCcm9uemUvU2lsdmVyIERlbHRhIGV2aWRlbmNlIGJlZm9yZSBzeW5jaHJvbml6aW5nIG9wZXJhdGlvbmFsIGRhdGEgdG8gTGFrZWJhc2UuCgojIENPTU1BTkQgLS0tLS0tLS0tLQoKIyBNQUdJQyAlcGlwIGluc3RhbGwgLXEgJ2RhdGFicmlja3Mtc2RrPj0wLjYxLjAnIHBzeWNvcGcyLWJpbmFyeSByZXF1ZXN0cyBzZW50ZW5jZS10cmFuc2Zvcm1lcnMKCiMgQ09NTUFORCAtLS0tLS0tLS0tCgpkYnV0aWxzLmxpYnJhcnkucmVzdGFydFB5dGhvbigpCgojIENPTU1BTkQgLS0tLS0tLS0tLQoKaW1wb3J0IGJhc2U2NApmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRlLCB0aW1lZGVsdGEKZnJvbSB1cmxsaWIucGFyc2UgaW1wb3J0IHVybHBhcnNlCgppbXBvcnQgcHN5Y29wZzIKaW1wb3J0IHJlcXVlc3RzCmZyb20gZGF0YWJyaWNrcy5zZGsgaW1wb3J0IFdvcmtzcGFjZUNsaWVudApmcm9tIHNlbnRlbmNlX3RyYW5zZm9ybWVycyBpbXBvcnQgU2VudGVuY2VUcmFuc2Zvcm1lcgpmcm9tIHB5c3Bhcmsuc3FsIGltcG9ydCBmdW5jdGlvbnMgYXMgRgpmcm9tIHB5c3Bhcmsuc3FsLnR5cGVzIGltcG9ydCBBcnJheVR5cGUsIERvdWJsZVR5cGUsIEludGVnZXJUeXBlLCBTdHJpbmdUeXBlLCBTdHJ1Y3RGaWVsZCwgU3RydWN0VHlwZQoKREVTVElOQVRJT04gPSAiTGlzYm9uIgpTVEFSVF9EQVRFID0gZGF0ZS50b2RheSgpICsgdGltZWRlbHRhKGRheXM9MSkKRU5EX0RBVEUgPSBTVEFSVF9EQVRFICsgdGltZWRlbHRhKGRheXM9MikKQlJPTlpFX1RBQkxFID0gIndvcmtzcGFjZS5kZWZhdWx0LnRyaXBfd2VhdGhlcl9icm9uemUiClNJTFZFUl9UQUJMRSA9ICJ3b3Jrc3BhY2UuZGVmYXVsdC50cmlwX3dlYXRoZXJfc2lsdmVyIgpXSUtJTUVESUFfQUNUSVZJVElFUyA9IHsKICAgICJCZWzDqW0sIExpc2JvbiI6ICJCZWzDqW0gUml2ZXJzaWRlIFdhbGsiLAogICAgIkplcsOzbmltb3MgTW9uYXN0ZXJ5IjogIkplcsOzbmltb3MgTW9uYXN0ZXJ5IiwKICAgICJDYWxvdXN0ZSBHdWxiZW5raWFuIE11c2V1bSI6ICJDYWxvdXN0ZSBHdWxiZW5raWFuIE11c2V1bSIsCiAgICAiQWxmYW1hIjogIkFsZmFtYSBXYWxraW5nIFRvdXIiLAogICAgIlRpbWUgT3V0IE1hcmtldCBMaXNib2EiOiAiVGltZSBPdXQgTWFya2V0IEZvb2QgVG91ciIsCiAgICAiTGlzYm9uIE9jZWFuYXJpdW0iOiAiT2NlYW7DoXJpbyBkZSBMaXNib2EiLAp9CgojIENPTU1BTkQgLS0tLS0tLS0tLQoKZ2VvY29kaW5nID0gcmVxdWVzdHMuZ2V0KAogICAgImh0dHBzOi8vZ2VvY29kaW5nLWFwaS5vcGVuLW1ldGVvLmNvbS92MS9zZWFyY2giLAogICAgcGFyYW1zPXsibmFtZSI6IERFU1RJTkFUSU9OLCAiY291bnQiOiAxLCAibGFuZ3VhZ2UiOiAiZW4iLCAiZm9ybWF0IjogImpzb24ifSwKICAgIHRpbWVvdXQ9MjAsCikuanNvbigpWyJyZXN1bHRzIl1bMF0KCmZvcmVjYXN0X3BheWxvYWQgPSByZXF1ZXN0cy5nZXQoCiAgICAiaHR0cHM6Ly9hcGkub3Blbi1tZXRlby5jb20vdjEvZm9yZWNhc3QiLAogICAgcGFyYW1zPXsKICAgICAgICAibGF0aXR1ZGUiOiBnZW9jb2RpbmdbImxhdGl0dWRlIl0sICJsb25naXR1ZGUiOiBnZW9jb2RpbmdbImxvbmdpdHVkZSJdLAogICAgICAgICJzdGFydF9kYXRlIjogU1RBUlRfREFURS5pc29mb3JtYXQoKSwgImVuZF9kYXRlIjogRU5EX0RBVEUuaXNvZm9ybWF0KCksCiAgICAgICAgImhvdXJseSI6ICJ0ZW1wZXJhdHVyZV8ybSxwcmVjaXBpdGF0aW9uX3Byb2JhYmlsaXR5LHdlYXRoZXJfY29kZSIsCiAgICAgICAgInRpbWV6b25lIjogImF1dG8iLAogICAgfSwKICAgIHRpbWVvdXQ9MjAsCikuanNvbigpCgojIENPTU1BTkQgLS0tLS0tLS0tLQoKIyBBIFNwYXJrIERhdGFGcmFtZSBpcyBjcmVhdGVkIGZyb20gcmF3IEFQSSBhcnJheXMsIHRoZW4gdHJhbnNmb3JtZWQgd2l0aCBTcGFyay4KcmF3X3Jvd3MgPSBsaXN0KHppcCgKICAgIGZvcmVjYXN0X3BheWxvYWRbImhvdXJseSJdWyJ0aW1lIl0sCiAgICBmb3JlY2FzdF9wYXlsb2FkWyJob3VybHkiXVsidGVtcGVyYXR1cmVfMm0iXSwKICAgIGZvcmVjYXN0X3BheWxvYWRbImhvdXJseSJdWyJwcmVjaXBpdGF0aW9uX3Byb2JhYmlsaXR5Il0sCiAgICBmb3JlY2FzdF9wYXlsb2FkWyJob3VybHkiXVsid2VhdGhlcl9jb2RlIl0sCikpCnJhd19zY2hlbWEgPSBTdHJ1Y3RUeXBlKFsKICAgIFN0cnVjdEZpZWxkKCJmb3JlY2FzdF90aW1lX3JhdyIsIFN0cmluZ1R5cGUoKSwgRmFsc2UpLAogICAgU3RydWN0RmllbGQoInRlbXBlcmF0dXJlX2MiLCBEb3VibGVUeXBlKCksIFRydWUpLAogICAgU3RydWN0RmllbGQoInByZWNpcGl0YXRpb25fcHJvYmFiaWxpdHkiLCBJbnRlZ2VyVHlwZSgpLCBUcnVlKSwKICAgIFN0cnVjdEZpZWxkKCJ3ZWF0aGVyX2NvZGUiLCBJbnRlZ2VyVHlwZSgpLCBUcnVlKSwKXSkKYnJvbnplX2RmID0gc3BhcmsuY3JlYXRlRGF0YUZyYW1lKHJhd19yb3dzLCByYXdfc2NoZW1hKS53aXRoQ29sdW1uKCJpbmdlc3RlZF9hdCIsIEYuY3VycmVudF90aW1lc3RhbXAoKSkKYnJvbnplX2RmLndyaXRlLm1vZGUoIm92ZXJ3cml0ZSIpLmZvcm1hdCgiZGVsdGEiKS5zYXZlQXNUYWJsZShCUk9OWkVfVEFCTEUpCgpzaWx2ZXJfZGYgPSAoCiAgICBicm9uemVfZGYKICAgIC53aXRoQ29sdW1uKCJmb3JlY2FzdF90aW1lIiwgRi50b190aW1lc3RhbXAoImZvcmVjYXN0X3RpbWVfcmF3IikpCiAgICAud2l0aENvbHVtbigiZGVzdGluYXRpb25fbmFtZSIsIEYubGl0KERFU1RJTkFUSU9OKSkKICAgIC53aXRoQ29sdW1uKAogICAgICAgICJ3ZWF0aGVyX2xhYmVsIiwKICAgICAgICBGLndoZW4oRi5jb2woIndlYXRoZXJfY29kZSIpID09IDAsICJjbGVhciIpCiAgICAgICAgIC53aGVuKEYuY29sKCJ3ZWF0aGVyX2NvZGUiKS5iZXR3ZWVuKDEsIDMpLCAiY2xvdWR5IikKICAgICAgICAgLndoZW4oRi5jb2woIndlYXRoZXJfY29kZSIpLmJldHdlZW4oNTEsIDY3KSwgInJhaW4iKQogICAgICAgICAub3RoZXJ3aXNlKCJvdGhlciIpLAogICAgKQogICAgLmRyb3AoImZvcmVjYXN0X3RpbWVfcmF3IikKKQpzaWx2ZXJfZGYud3JpdGUubW9kZSgib3ZlcndyaXRlIikuZm9ybWF0KCJkZWx0YSIpLnNhdmVBc1RhYmxlKFNJTFZFUl9UQUJMRSkKZGlzcGxheShzaWx2ZXJfZGYuZ3JvdXBCeSgid2VhdGhlcl9sYWJlbCIpLmFnZyhGLmNvdW50KCIqIikuYWxpYXMoImhvdXJzIiksIEYucm91bmQoRi5hdmcoInRlbXBlcmF0dXJlX2MiKSwgMSkuYWxpYXMoImF2Z190ZW1wZXJhdHVyZV9jIikpKQoKIyBDT01NQU5EIC0tLS0tLS0tLS0KCmRlZiB3aWtpcGVkaWFfZXh0cmFjdCh0aXRsZTogc3RyKSAtPiBkaWN0OgogICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5nZXQoCiAgICAgICAgImh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93L2FwaS5waHAiLAogICAgICAgIHBhcmFtcz17CiAgICAgICAgICAgICJhY3Rpb24iOiAicXVlcnkiLCAicHJvcCI6ICJleHRyYWN0c3xpbmZvIiwgImV4aW50cm8iOiAxLAogICAgICAgICAgICAiZXhwbGFpbnRleHQiOiAxLCAiaW5wcm9wIjogInVybCIsICJyZWRpcmVjdHMiOiAxLAogICAgICAgICAgICAidGl0bGVzIjogdGl0bGUsICJmb3JtYXQiOiAianNvbiIsICJvcmlnaW4iOiAiKiIsCiAgICAgICAgfSwKICAgICAgICBoZWFkZXJzPXsiVXNlci1BZ2VudCI6ICJOYXphQUlUcmlwUGxhbm5lci8xLjAgZWR1Y2F0aW9uYWwtY2Fwc3RvbmUifSwKICAgICAgICB0aW1lb3V0PTIwLAogICAgKQogICAgcmVzcG9uc2UucmFpc2VfZm9yX3N0YXR1cygpCiAgICBwYWdlID0gbmV4dChpdGVyKHJlc3BvbnNlLmpzb24oKVsicXVlcnkiXVsicGFnZXMiXS52YWx1ZXMoKSkpCiAgICByZXR1cm4geyJ0aXRsZSI6IHBhZ2UuZ2V0KCJ0aXRsZSIsIHRpdGxlKSwgInRleHQiOiBwYWdlLmdldCgiZXh0cmFjdCIsICIiKSwgInNvdXJjZV91cmwiOiBwYWdlLmdldCgiZnVsbHVybCIpfQoKCndpa2lfcm93cyA9IFsKICAgIHsqKndpa2lwZWRpYV9leHRyYWN0KHRpdGxlKSwgImFjdGl2aXR5X25hbWUiOiBhY3Rpdml0eV9uYW1lfQogICAgZm9yIHRpdGxlLCBhY3Rpdml0eV9uYW1lIGluIFdJS0lNRURJQV9BQ1RJVklUSUVTLml0ZW1zKCkKXQp3aWtpX2RmID0gc3BhcmsuY3JlYXRlRGF0YUZyYW1lKHdpa2lfcm93cykuZmlsdGVyKEYubGVuZ3RoKCJ0ZXh0IikgPiAxMDApLmRyb3BEdXBsaWNhdGVzKFsidGl0bGUiXSkKZGlzcGxheSh3aWtpX2RmLnNlbGVjdCgidGl0bGUiLCBGLmxlbmd0aCgidGV4dCIpLmFsaWFzKCJ0ZXh0X2xlbmd0aCIpLCAic291cmNlX3VybCIpKQoKIyBDT01NQU5EIC0tLS0tLS0tLS0KCndvcmtzcGFjZSA9IFdvcmtzcGFjZUNsaWVudCgpCnNlY3JldCA9IHdvcmtzcGFjZS5zZWNyZXRzLmdldF9zZWNyZXQoc2NvcGU9ImRhdGFiYXNlIiwga2V5PSJsYWtlYmFzZS11cmwiKQpsYWtlYmFzZV91cmwgPSBiYXNlNjQuYjY0ZGVjb2RlKHNlY3JldC52YWx1ZSkuZGVjb2RlKCJ1dGYtOCIpCm1vZGVsID0gU2VudGVuY2VUcmFuc2Zvcm1lcigic2VudGVuY2UtdHJhbnNmb3JtZXJzL2FsbC1NaW5pTE0tTDYtdjIiKQoKd2l0aCBwc3ljb3BnMi5jb25uZWN0KGxha2ViYXNlX3VybCkgYXMgY29ubiwgY29ubi5jdXJzb3IoKSBhcyBjdXJzb3I6CiAgICBjdXJzb3IuZXhlY3V0ZSgiU0VMRUNUIHRyaXBfaWQgRlJPTSB0cmlwcyBXSEVSRSBuYW1lID0gJ0xpc2JvbiBBZHZlbnR1cmUnIE9SREVSIEJZIHRyaXBfaWQgTElNSVQgMSIpCiAgICB0cmlwX2lkID0gY3Vyc29yLmZldGNob25lKClbMF0KICAgIGZvciByb3cgaW4gc2lsdmVyX2RmLnNlbGVjdCgiZm9yZWNhc3RfdGltZSIsICJ0ZW1wZXJhdHVyZV9jIiwgInByZWNpcGl0YXRpb25fcHJvYmFiaWxpdHkiLCAid2VhdGhlcl9jb2RlIikuY29sbGVjdCgpOgogICAgICAgIGN1cnNvci5leGVjdXRlKAogICAgICAgICAgICAiIiIKICAgICAgICAgICAgSU5TRVJUIElOVE8gd2VhdGhlcl9zbmFwc2hvdHMKICAgICAgICAgICAgICAgICh0cmlwX2lkLCBmb3JlY2FzdF90aW1lLCB0ZW1wZXJhdHVyZV9jLCBwcmVjaXBpdGF0aW9uX3Byb2JhYmlsaXR5LCB3ZWF0aGVyX2NvZGUpCiAgICAgICAgICAgIFZBTFVFUyAoJXMsICVzLCAlcywgJXMsICVzKQogICAgICAgICAgICBPTiBDT05GTElDVCAodHJpcF9pZCwgZm9yZWNhc3RfdGltZSkgRE8gVVBEQVRFIFNFVAogICAgICAgICAgICAgICAgdGVtcGVyYXR1cmVfYyA9IEVYQ0xVREVELnRlbXBlcmF0dXJlX2MsCiAgICAgICAgICAgICAgICBwcmVjaXBpdGF0aW9uX3Byb2JhYmlsaXR5ID0gRVhDTFVERUQucHJlY2lwaXRhdGlvbl9wcm9iYWJpbGl0eSwKICAgICAgICAgICAgICAgIHdlYXRoZXJfY29kZSA9IEVYQ0xVREVELndlYXRoZXJfY29kZSwKICAgICAgICAgICAgICAgIGZldGNoZWRfYXQgPSBOT1coKQogICAgICAgICAgICAiIiIsCiAgICAgICAgICAgICh0cmlwX2lkLCByb3cuZm9yZWNhc3RfdGltZSwgcm93LnRlbXBlcmF0dXJlX2MsIHJvdy5wcmVjaXBpdGF0aW9uX3Byb2JhYmlsaXR5LCByb3cud2VhdGhlcl9jb2RlKSwKICAgICAgICApCgogICAgZm9yIGFydGljbGUgaW4gd2lraV9kZi5jb2xsZWN0KCk6CiAgICAgICAgY3Vyc29yLmV4ZWN1dGUoCiAgICAgICAgICAgICJTRUxFQ1QgYWN0aXZpdHlfaWQsIG5hbWUsIGNhdGVnb3J5LCBkZXNjcmlwdGlvbiBGUk9NIGFjdGl2aXRpZXMgV0hFUkUgZGVzdGluYXRpb25fbmFtZSA9ICVzIEFORCBsb3dlcihuYW1lKSA9IGxvd2VyKCVzKSIsCiAgICAgICAgICAgIChERVNUSU5BVElPTiwgYXJ0aWNsZS5hY3Rpdml0eV9uYW1lKSwKICAgICAgICApCiAgICAgICAgYWN0aXZpdHkgPSBjdXJzb3IuZmV0Y2hvbmUoKQogICAgICAgIGlmIG5vdCBhY3Rpdml0eToKICAgICAgICAgICAgY29udGludWUKICAgICAgICBkb2N1bWVudF90ZXh0ID0gZiJ7YWN0aXZpdHlbMV19LiBDYXRlZ29yeToge2FjdGl2aXR5WzJdfS4ge2FjdGl2aXR5WzNdfVxuXG57YXJ0aWNsZS50ZXh0fSIKICAgICAgICBlbWJlZGRpbmcgPSBtb2RlbC5lbmNvZGUoZG9jdW1lbnRfdGV4dCkudG9saXN0KCkKICAgICAgICB2ZWN0b3JfbGl0ZXJhbCA9ICJbIiArICIsIi5qb2luKHN0cih2YWx1ZSkgZm9yIHZhbHVlIGluIGVtYmVkZGluZykgKyAiXSIKICAgICAgICBjdXJzb3IuZXhlY3V0ZSgKICAgICAgICAgICAgIiIiCiAgICAgICAgICAgIElOU0VSVCBJTlRPIGFjdGl2aXR5X2RvY3VtZW50cyAoYWN0aXZpdHlfaWQsIGRvY3VtZW50X3RleHQsIGVtYmVkZGluZykKICAgICAgICAgICAgVkFMVUVTICglcywgJXMsICVzOjp2ZWN0b3IpCiAgICAgICAgICAgIE9OIENPTkZMSUNUIChhY3Rpdml0eV9pZCkgRE8gVVBEQVRFIFNFVAogICAgICAgICAgICAgICAgZG9jdW1lbnRfdGV4dCA9IEVYQ0xVREVELmRvY3VtZW50X3RleHQsCiAgICAgICAgICAgICAgICBlbWJlZGRpbmcgPSBFWENMVURFRC5lbWJlZGRpbmcsCiAgICAgICAgICAgICAgICB1cGRhdGVkX2F0ID0gTk9XKCkKICAgICAgICAgICAgIiIiLAogICAgICAgICAgICAoYWN0aXZpdHlbMF0sIGRvY3VtZW50X3RleHQsIHZlY3Rvcl9saXRlcmFsKSwKICAgICAgICApCiAgICBjb25uLmNvbW1pdCgpCgpwcmludCgiUGlwZWxpbmUgY29tcGxldGVkOiBPcGVuLU1ldGVvICsgV2lraW1lZGlhIC0+IFNwYXJrIERlbHRhIC0+IExha2ViYXNlICsgcGd2ZWN0b3IiKQo=
+# Databricks notebook source
+# MAGIC %md
+# MAGIC # Open-Meteo + Wikimedia -> Spark -> Delta -> Lakebase + pgvector
+# MAGIC
+# MAGIC This capstone pipeline performs real Spark transformations and preserves
+# MAGIC Bronze/Silver Delta evidence before synchronizing operational data to Lakebase.
+
+# COMMAND ----------
+
+# MAGIC %pip install -q 'databricks-sdk>=0.61.0' psycopg2-binary requests sentence-transformers
+
+# COMMAND ----------
+
+dbutils.library.restartPython()
+
+# COMMAND ----------
+
+import base64
+from datetime import date, timedelta
+from urllib.parse import urlparse
+
+import psycopg2
+import requests
+from databricks.sdk import WorkspaceClient
+from sentence_transformers import SentenceTransformer
+from pyspark.sql import functions as F
+from pyspark.sql.types import ArrayType, DoubleType, IntegerType, StringType, StructField, StructType
+
+DESTINATION = "Lisbon"
+START_DATE = date.today() + timedelta(days=1)
+END_DATE = START_DATE + timedelta(days=2)
+BRONZE_TABLE = "workspace.default.trip_weather_bronze"
+SILVER_TABLE = "workspace.default.trip_weather_silver"
+WIKIMEDIA_ACTIVITIES = {
+    "Belém, Lisbon": "Belém Riverside Walk",
+    "Jerónimos Monastery": "Jerónimos Monastery",
+    "Calouste Gulbenkian Museum": "Calouste Gulbenkian Museum",
+    "Alfama": "Alfama Walking Tour",
+    "Time Out Market Lisboa": "Time Out Market Food Tour",
+    "Lisbon Oceanarium": "Oceanário de Lisboa",
+}
+
+# COMMAND ----------
+
+geocoding = requests.get(
+    "https://geocoding-api.open-meteo.com/v1/search",
+    params={"name": DESTINATION, "count": 1, "language": "en", "format": "json"},
+    timeout=20,
+).json()["results"][0]
+
+forecast_payload = requests.get(
+    "https://api.open-meteo.com/v1/forecast",
+    params={
+        "latitude": geocoding["latitude"], "longitude": geocoding["longitude"],
+        "start_date": START_DATE.isoformat(), "end_date": END_DATE.isoformat(),
+        "hourly": "temperature_2m,precipitation_probability,weather_code",
+        "timezone": "auto",
+    },
+    timeout=20,
+).json()
+
+# COMMAND ----------
+
+# A Spark DataFrame is created from raw API arrays, then transformed with Spark.
+raw_rows = list(zip(
+    forecast_payload["hourly"]["time"],
+    forecast_payload["hourly"]["temperature_2m"],
+    forecast_payload["hourly"]["precipitation_probability"],
+    forecast_payload["hourly"]["weather_code"],
+))
+raw_schema = StructType([
+    StructField("forecast_time_raw", StringType(), False),
+    StructField("temperature_c", DoubleType(), True),
+    StructField("precipitation_probability", IntegerType(), True),
+    StructField("weather_code", IntegerType(), True),
+])
+bronze_df = spark.createDataFrame(raw_rows, raw_schema).withColumn("ingested_at", F.current_timestamp())
+bronze_df.write.mode("overwrite").format("delta").saveAsTable(BRONZE_TABLE)
+
+silver_df = (
+    bronze_df
+    .withColumn("forecast_time", F.to_timestamp("forecast_time_raw"))
+    .withColumn("destination_name", F.lit(DESTINATION))
+    .withColumn(
+        "weather_label",
+        F.when(F.col("weather_code") == 0, "clear")
+         .when(F.col("weather_code").between(1, 3), "cloudy")
+         .when(F.col("weather_code").between(51, 67), "rain")
+         .otherwise("other"),
+    )
+    .drop("forecast_time_raw")
+)
+silver_df.write.mode("overwrite").format("delta").saveAsTable(SILVER_TABLE)
+display(silver_df.groupBy("weather_label").agg(F.count("*").alias("hours"), F.round(F.avg("temperature_c"), 1).alias("avg_temperature_c")))
+
+# COMMAND ----------
+
+def wikipedia_extract(title: str) -> dict:
+    response = requests.get(
+        "https://en.wikipedia.org/w/api.php",
+        params={
+            "action": "query", "prop": "extracts|info", "exintro": 1,
+            "explaintext": 1, "inprop": "url", "redirects": 1,
+            "titles": title, "format": "json", "origin": "*",
+        },
+        headers={"User-Agent": "NazaAITripPlanner/1.0 educational-capstone"},
+        timeout=20,
+    )
+    response.raise_for_status()
+    page = next(iter(response.json()["query"]["pages"].values()))
+    return {"title": page.get("title", title), "text": page.get("extract", ""), "source_url": page.get("fullurl")}
+
+
+wiki_rows = [
+    {**wikipedia_extract(title), "activity_name": activity_name}
+    for title, activity_name in WIKIMEDIA_ACTIVITIES.items()
+]
+wiki_df = spark.createDataFrame(wiki_rows).filter(F.length("text") > 100).dropDuplicates(["title"])
+display(wiki_df.select("title", F.length("text").alias("text_length"), "source_url"))
+
+# COMMAND ----------
+
+workspace = WorkspaceClient()
+secret = workspace.secrets.get_secret(scope="database", key="lakebase-url")
+lakebase_url = base64.b64decode(secret.value).decode("utf-8")
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+with psycopg2.connect(lakebase_url) as conn, conn.cursor() as cursor:
+    cursor.execute("SELECT trip_id FROM trips WHERE name = 'Lisbon Adventure' ORDER BY trip_id LIMIT 1")
+    trip_id = cursor.fetchone()[0]
+    for row in silver_df.select("forecast_time", "temperature_c", "precipitation_probability", "weather_code").collect():
+        cursor.execute(
+            """
+            INSERT INTO weather_snapshots
+                (trip_id, forecast_time, temperature_c, precipitation_probability, weather_code)
+            VALUES (%s, %s, %s, %s, %s)
+            ON CONFLICT (trip_id, forecast_time) DO UPDATE SET
+                temperature_c = EXCLUDED.temperature_c,
+                precipitation_probability = EXCLUDED.precipitation_probability,
+                weather_code = EXCLUDED.weather_code,
+                fetched_at = NOW()
+            """,
+            (trip_id, row.forecast_time, row.temperature_c, row.precipitation_probability, row.weather_code),
+        )
+
+    for article in wiki_df.collect():
+        cursor.execute(
+            "SELECT activity_id, name, category, description FROM activities WHERE destination_name = %s AND lower(name) = lower(%s)",
+            (DESTINATION, article.activity_name),
+        )
+        activity = cursor.fetchone()
+        if not activity:
+            continue
+        document_text = f"{activity[1]}. Category: {activity[2]}. {activity[3]}\n\n{article.text}"
+        embedding = model.encode(document_text).tolist()
+        vector_literal = "[" + ",".join(str(value) for value in embedding) + "]"
+        cursor.execute(
+            """
+            INSERT INTO activity_documents (activity_id, document_text, embedding)
+            VALUES (%s, %s, %s::vector)
+            ON CONFLICT (activity_id) DO UPDATE SET
+                document_text = EXCLUDED.document_text,
+                embedding = EXCLUDED.embedding,
+                updated_at = NOW()
+            """,
+            (activity[0], document_text, vector_literal),
+        )
+    conn.commit()
+
+print("Pipeline completed: Open-Meteo + Wikimedia -> Spark Delta -> Lakebase + pgvector")
