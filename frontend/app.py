@@ -1,1 +1,76 @@
-IiIiRGF0YWJyaWNrcyBBcHAgZnJvbnRlbmQgZm9yIHRoZSBOYXphIEFJIFRyaXAgUGxhbm5lci4iIiIKCmltcG9ydCBvcwpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRlLCBkYXRldGltZQoKZnJvbSBmbGFzayBpbXBvcnQgRmxhc2ssIGpzb25pZnksIHJlbmRlcl90ZW1wbGF0ZQoKaW1wb3J0IGxha2ViYXNlCgphcHAgPSBGbGFzayhfX25hbWVfXykKCgpkZWYganNvbl9zYWZlKHZhbHVlKToKICAgIGlmIGlzaW5zdGFuY2UodmFsdWUsIChkYXRldGltZSwgZGF0ZSkpOgogICAgICAgIHJldHVybiB2YWx1ZS5pc29mb3JtYXQoKQogICAgaWYgaGFzYXR0cih2YWx1ZSwgImFzX3R1cGxlIik6CiAgICAgICAgcmV0dXJuIGZsb2F0KHZhbHVlKQogICAgcmV0dXJuIHZhbHVlCgoKZGVmIHJvd3NfdG9fanNvbihyb3dzKToKICAgIHJldHVybiBbe2tleToganNvbl9zYWZlKHZhbHVlKSBmb3Iga2V5LCB2YWx1ZSBpbiByb3cuaXRlbXMoKX0gZm9yIHJvdyBpbiByb3dzXQoKCkBhcHAuZ2V0KCIvIikKZGVmIGluZGV4KCk6CiAgICByZXR1cm4gcmVuZGVyX3RlbXBsYXRlKCJpbmRleC5odG1sIikKCgpAYXBwLmdldCgiL2FwaS9kYXNoYm9hcmQiKQpkZWYgZGFzaGJvYXJkKCk6CiAgICB0cmlwcyA9IGxha2ViYXNlLnF1ZXJ5KCJTRUxFQ1QgKiBGUk9NIHRyaXBzIE9SREVSIEJZIHRyaXBfaWQgTElNSVQgMSIpCiAgICBpZiBub3QgdHJpcHM6CiAgICAgICAgcmV0dXJuIGpzb25pZnkoeyJlcnJvciI6ICJSdW4gc3FsL3NldHVwLnNxbCBiZWZvcmUgb3BlbmluZyB0aGUgYXBwIn0pLCA0MDQKICAgIHRyaXAgPSB0cmlwc1swXQogICAgdHJpcF9pZCA9IHRyaXBbInRyaXBfaWQiXQogICAgd2VhdGhlciA9IGxha2ViYXNlLnF1ZXJ5KAogICAgICAgICIiIgogICAgICAgIFNFTEVDVCBmb3JlY2FzdF90aW1lLCB0ZW1wZXJhdHVyZV9jLCBwcmVjaXBpdGF0aW9uX3Byb2JhYmlsaXR5LCB3ZWF0aGVyX2NvZGUKICAgICAgICBGUk9NIHdlYXRoZXJfc25hcHNob3RzIFdIRVJFIHRyaXBfaWQgPSAlcyBPUkRFUiBCWSBmb3JlY2FzdF90aW1lIExJTUlUIDI0CiAgICAgICAgIiIiLAogICAgICAgICh0cmlwX2lkLCksCiAgICApCiAgICBpdGluZXJhcnkgPSBsYWtlYmFzZS5xdWVyeSgKICAgICAgICAiIiIKICAgICAgICBTRUxFQ1QgaS5pdGluZXJhcnlfaXRlbV9pZCwgaS5zY2hlZHVsZWRfYXQsIGkuZHVyYXRpb25fbWludXRlcywgaS5yYXRpb25hbGUsCiAgICAgICAgICAgICAgIGkuc3RhdHVzLCBhLm5hbWUsIGEuY2F0ZWdvcnksIGEuaW5kb29yCiAgICAgICAgRlJPTSBpdGluZXJhcnlfaXRlbXMgaSBKT0lOIGFjdGl2aXRpZXMgYSBPTiBhLmFjdGl2aXR5X2lkID0gaS5hY3Rpdml0eV9pZAogICAgICAgIFdIRVJFIGkudHJpcF9pZCA9ICVzIE9SREVSIEJZIGkuc2NoZWR1bGVkX2F0CiAgICAgICAgIiIiLAogICAgICAgICh0cmlwX2lkLCksCiAgICApCiAgICBhY3Rpdml0aWVzID0gbGFrZWJhc2UucXVlcnkoCiAgICAgICAgIlNFTEVDVCBhY3Rpdml0eV9pZCwgbmFtZSwgY2F0ZWdvcnksIGluZG9vciwgZGVzY3JpcHRpb24gRlJPTSBhY3Rpdml0aWVzIFdIRVJFIGRlc3RpbmF0aW9uX25hbWUgPSAlcyBPUkRFUiBCWSBuYW1lIiwKICAgICAgICAodHJpcFsiZGVzdGluYXRpb25fbmFtZSJdLCksCiAgICApCiAgICBwYWNraW5nID0gbGFrZWJhc2UucXVlcnkoCiAgICAgICAgIlNFTEVDVCBwYWNraW5nX2l0ZW1faWQsIGl0ZW1fbmFtZSwgcmVhc29uLCBwYWNrZWQgRlJPTSBwYWNraW5nX2l0ZW1zIFdIRVJFIHRyaXBfaWQgPSAlcyBPUkRFUiBCWSBpdGVtX25hbWUiLAogICAgICAgICh0cmlwX2lkLCksCiAgICApCiAgICByZXR1cm4ganNvbmlmeSh7CiAgICAgICAgInRyaXAiOiByb3dzX3RvX2pzb24oW3RyaXBdKVswXSwKICAgICAgICAid2VhdGhlciI6IHJvd3NfdG9fanNvbih3ZWF0aGVyKSwKICAgICAgICAiaXRpbmVyYXJ5Ijogcm93c190b19qc29uKGl0aW5lcmFyeSksCiAgICAgICAgImFjdGl2aXRpZXMiOiByb3dzX3RvX2pzb24oYWN0aXZpdGllcyksCiAgICAgICAgInBhY2tpbmciOiByb3dzX3RvX2pzb24ocGFja2luZyksCiAgICB9KQoKCkBhcHAuZ2V0KCIvaGVhbHRoIikKZGVmIGhlYWx0aCgpOgogICAgcmV0dXJuIHsic3RhdHVzIjogIm9rIiwgInNlcnZpY2UiOiAibmF6YS1haS10cmlwLXBsYW5uZXIifQoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBhcHAucnVuKGhvc3Q9IjAuMC4wLjAiLCBwb3J0PWludChvcy5lbnZpcm9uLmdldCgiREFUQUJSSUNLU19BUFBfUE9SVCIsICI4MDAwIikpKQo=
+"""Databricks App frontend for the Naza AI Trip Planner."""
+
+import os
+from datetime import date, datetime
+
+from flask import Flask, jsonify, render_template
+
+import lakebase
+
+app = Flask(__name__)
+
+
+def json_safe(value):
+    if isinstance(value, (datetime, date)):
+        return value.isoformat()
+    if hasattr(value, "as_tuple"):
+        return float(value)
+    return value
+
+
+def rows_to_json(rows):
+    return [{key: json_safe(value) for key, value in row.items()} for row in rows]
+
+
+@app.get("/")
+def index():
+    return render_template("index.html")
+
+
+@app.get("/api/dashboard")
+def dashboard():
+    trips = lakebase.query("SELECT * FROM trips ORDER BY trip_id LIMIT 1")
+    if not trips:
+        return jsonify({"error": "Run sql/setup.sql before opening the app"}), 404
+    trip = trips[0]
+    trip_id = trip["trip_id"]
+    weather = lakebase.query(
+        """
+        SELECT forecast_time, temperature_c, precipitation_probability, weather_code
+        FROM weather_snapshots WHERE trip_id = %s ORDER BY forecast_time LIMIT 24
+        """,
+        (trip_id,),
+    )
+    itinerary = lakebase.query(
+        """
+        SELECT i.itinerary_item_id, i.scheduled_at, i.duration_minutes, i.rationale,
+               i.status, a.name, a.category, a.indoor
+        FROM itinerary_items i JOIN activities a ON a.activity_id = i.activity_id
+        WHERE i.trip_id = %s ORDER BY i.scheduled_at
+        """,
+        (trip_id,),
+    )
+    activities = lakebase.query(
+        "SELECT activity_id, name, category, indoor, description FROM activities WHERE destination_name = %s ORDER BY name",
+        (trip["destination_name"],),
+    )
+    packing = lakebase.query(
+        "SELECT packing_item_id, item_name, reason, packed FROM packing_items WHERE trip_id = %s ORDER BY item_name",
+        (trip_id,),
+    )
+    return jsonify({
+        "trip": rows_to_json([trip])[0],
+        "weather": rows_to_json(weather),
+        "itinerary": rows_to_json(itinerary),
+        "activities": rows_to_json(activities),
+        "packing": rows_to_json(packing),
+    })
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok", "service": "naza-ai-trip-planner"}
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("DATABRICKS_APP_PORT", "8000")))
