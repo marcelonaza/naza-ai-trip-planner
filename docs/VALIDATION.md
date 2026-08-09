@@ -12,6 +12,19 @@ ORDER BY table_name;
 
 Capture the seven tables, then capture PK/FK constraints.
 
+```sql
+SELECT tc.table_name, tc.constraint_type, kcu.column_name,
+       ccu.table_name AS referenced_table
+FROM information_schema.table_constraints tc
+LEFT JOIN information_schema.key_column_usage kcu
+  ON tc.constraint_name = kcu.constraint_name
+LEFT JOIN information_schema.constraint_column_usage ccu
+  ON tc.constraint_name = ccu.constraint_name
+WHERE tc.table_schema = 'public'
+  AND tc.constraint_type IN ('PRIMARY KEY', 'FOREIGN KEY')
+ORDER BY tc.table_name, tc.constraint_type, kcu.column_name;
+```
+
 ## 2. Spark pipeline
 
 - Capture the Bronze table write.
@@ -45,13 +58,13 @@ Show the current weather forecast and itinerary for trip 1.
 ## 5. Agent write and persistence tests
 
 ```text
-Add Jerónimos Monastery to trip 1 for tomorrow at 14:00, for 120 minutes. Explain that it is an indoor alternative if rain is likely.
+Add Jerónimos Monastery to trip 1 on the trip's first date at 14:00, for 120 minutes. Explain that it is an indoor alternative if rain is likely.
 ```
 
 Refresh the frontend and capture the new item. Then:
 
 ```text
-Move that itinerary item to tomorrow at 16:00 because the morning weather is better for outdoor activities.
+Move that itinerary item to 16:00 on the same date because the earlier period is better for outdoor activities.
 ```
 
 ```text
