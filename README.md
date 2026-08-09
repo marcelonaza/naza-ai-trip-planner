@@ -1,1 +1,46 @@
-IyBOYXphIEFJIFRyaXAgUGxhbm5lcgoKV2VhdGhlci1hd2FyZSB0cmF2ZWwgcGxhbm5pbmcgY2Fwc3RvbmUgZm9yIHRoZSBSaXNlIG9mIHRoZSBBSSBEYXRhIEVuZ2luZWVyIGJvb3QgY2FtcC4KCiMjIENhcHN0b25lIGNvdmVyYWdlCgp8IFJlcXVpcmVtZW50IHwgSW1wbGVtZW50YXRpb24gfCBFdmlkZW5jZSB8CnwtLS18LS0tfC0tLXwKfCBTcGFyayBkYXRhIHBpcGVsaW5lIHwgYHBpcGVsaW5lL2luZ2VzdF9kZXN0aW5hdGlvbnNfd2VhdGhlci5weWAgfCBTcGFyayB0cmFuc2Zvcm1hdGlvbnMgYW5kIERlbHRhIHdyaXRlcyB8CnwgVGhpcmQtcGFydHkgQVBJIHwgT3Blbi1NZXRlbyBHZW9jb2RpbmcvRm9yZWNhc3QgYW5kIFdpa2ltZWRpYSB8IFJhdyBBUEkgcmVzcG9uc2VzIGFuZCBwaXBlbGluZSBvdXRwdXQgfAp8IFVuc3RydWN0dXJlZCBkYXRhIHwgV2lraW1lZGlhIGRlc3RpbmF0aW9uIGFuZCBhdHRyYWN0aW9uIHRleHQgfCBgYWN0aXZpdHlfZG9jdW1lbnRzYCBhbmQgZW1iZWRkaW5ncyB8CnwgRGF0YWJyaWNrcyBBcHAgZnJvbnRlbmQgfCBGbGFzayBhcHAgaW4gYGZyb250ZW5kL2AgfCBEZXBsb3llZCBhcHBsaWNhdGlvbiB3YWxrdGhyb3VnaCB8CnwgQUkgYWdlbnQgd2l0aCBhY3Rpb25zIHwgRmFzdE1DUCBzZXJ2ZXIgaW4gYG1jcF9zZXJ2ZXIvYCB8IFJlYWQsIHNlbWFudGljIHNlYXJjaCwgYWRkL21vdmUvcmVtb3ZlIGl0aW5lcmFyeSBpdGVtcyB8CnwgT3BlcmF0aW9uYWwgZGF0YWJhc2UgfCBMYWtlYmFzZSBQb3N0Z3JlU1FMIHwgVHJpcHMsIGFjdGl2aXRpZXMsIGl0aW5lcmFyeSwgd2VhdGhlciBhbmQgcGFja2luZyBkYXRhIHwKfCBTZW1hbnRpYyByZXRyaWV2YWwgfCBgYWxsLU1pbmlMTS1MNi12MmAgKyBMYWtlYmFzZSBgcGd2ZWN0b3JgIHwgTmF0dXJhbC1sYW5ndWFnZSBhY3Rpdml0eSBzZWFyY2ggfAoKIyMgQXJjaGl0ZWN0dXJlCgoxLiBUaGUgU3Bhcmsgbm90ZWJvb2sgY2FsbHMgT3Blbi1NZXRlbyBhbmQgV2lraW1lZGlhLgoyLiBTcGFyayBub3JtYWxpemVzIHRoZSBBUEkgcGF5bG9hZHMgYW5kIHdyaXRlcyBCcm9uemUvU2lsdmVyIERlbHRhIHRhYmxlcy4KMy4gQ3VyYXRlZCByZWNvcmRzIGFyZSBzeW5jaHJvbml6ZWQgdG8gTGFrZWJhc2UuCjQuIFVuc3RydWN0dXJlZCBhY3Rpdml0eSBkb2N1bWVudHMgYXJlIGVtYmVkZGVkIGFuZCBzdG9yZWQgd2l0aCBgcGd2ZWN0b3JgLgo1LiBBIEZhc3RNQ1Agc2VydmVyIGV4cG9zZXMgcmV0cmlldmFsIGFuZCB3cml0ZSB0b29scyB0byBBZ2VudCBCcmlja3MuCjYuIEEgRmxhc2sgRGF0YWJyaWNrcyBBcHAgcHJlc2VudHMgdGhlIHRyaXAsIHdlYXRoZXIsIGl0aW5lcmFyeSwgYW5kIHBhY2tpbmcgbGlzdC4KCiMjIFJlcG9zaXRvcnkgbGF5b3V0CgpgYGB0ZXh0CnBpcGVsaW5lLyAgICAgICBEYXRhYnJpY2tzIFNwYXJrIGluZ2VzdGlvbiBub3RlYm9vawpzcWwvICAgICAgICAgICAgTGFrZWJhc2Ugc2NoZW1hIGFuZCBkZXRlcm1pbmlzdGljIGRlbW8gc2VlZAptY3Bfc2VydmVyLyAgICAgRmFzdE1DUCBhcHBsaWNhdGlvbiBmb3IgQWdlbnQgQnJpY2tzCmZyb250ZW5kLyAgICAgICBGbGFzayBEYXRhYnJpY2tzIEFwcAp0ZXN0cy8gICAgICAgICAgVW5pdCB0ZXN0cyBmb3IgZGV0ZXJtaW5pc3RpYyBidXNpbmVzcyBydWxlcwpkb2NzLyAgICAgICAgICAgUmVxdWlyZW1lbnQsIHRlc3QsIGFuZCBzY3JlZW5zaG90IGNoZWNrbGlzdApgYGAKCiMjIERlcGxveW1lbnQgb3JkZXIKCjEuIFJ1biBgc3FsL3NldHVwLnNxbGAgaW4gdGhlIExha2ViYXNlIFNRTCBlZGl0b3IuCjIuIENvbmZpZ3VyZSB0aGUgZXhpc3RpbmcgYGRhdGFiYXNlL2xha2ViYXNlLXVybGAgRGF0YWJyaWNrcyBzZWNyZXQuCjMuIEltcG9ydCBhbmQgcnVuIGBwaXBlbGluZS9pbmdlc3RfZGVzdGluYXRpb25zX3dlYXRoZXIucHlgLgo0LiBEZXBsb3kgYG1jcF9zZXJ2ZXIvYCBhcyBhIERhdGFicmlja3MgQXBwIGFuZCBjb25uZWN0IGl0cyBNQ1AgVVJMIHRvIEFnZW50IEJyaWNrcy4KNS4gRGVwbG95IGBmcm9udGVuZC9gIGFzIGEgc2Vjb25kIERhdGFicmlja3MgQXBwLgo2LiBFeGVjdXRlIHRoZSB0ZXN0cyBpbiBgZG9jcy9WQUxJREFUSU9OLm1kYCBhbmQgY2FwdHVyZSBldmVyeSByZXF1aXJlZCBzY3JlZW5zaG90LgoKTm8gY3JlZGVudGlhbHMgb3IgcGVyc29uYWwgYWNjZXNzIHRva2VucyBiZWxvbmcgaW4gdGhpcyByZXBvc2l0b3J5Lgo=
+# Naza AI Trip Planner
+
+Weather-aware travel planning capstone for the Rise of the AI Data Engineer boot camp.
+
+## Capstone coverage
+
+| Requirement | Implementation | Evidence |
+|---|---|---|
+| Spark data pipeline | `pipeline/ingest_destinations_weather.py` | Spark transformations and Delta writes |
+| Third-party API | Open-Meteo Geocoding/Forecast and Wikimedia | Raw API responses and pipeline output |
+| Unstructured data | Wikimedia destination and attraction text | `activity_documents` and embeddings |
+| Databricks App frontend | Flask app in `frontend/` | Deployed application walkthrough |
+| AI agent with actions | FastMCP server in `mcp_server/` | Read, semantic search, add/move/remove itinerary items |
+| Operational database | Lakebase PostgreSQL | Trips, activities, itinerary, weather and packing data |
+| Semantic retrieval | `all-MiniLM-L6-v2` + Lakebase `pgvector` | Natural-language activity search |
+
+## Architecture
+
+1. The Spark notebook calls Open-Meteo and Wikimedia.
+2. Spark normalizes the API payloads and writes Bronze/Silver Delta tables.
+3. Curated records are synchronized to Lakebase.
+4. Unstructured activity documents are embedded and stored with `pgvector`.
+5. A FastMCP server exposes retrieval and write tools to Agent Bricks.
+6. A Flask Databricks App presents the trip, weather, itinerary, and packing list.
+
+## Repository layout
+
+```text
+pipeline/       Databricks Spark ingestion notebook
+sql/            Lakebase schema and deterministic demo seed
+mcp_server/     FastMCP application for Agent Bricks
+frontend/       Flask Databricks App
+tests/          Unit tests for deterministic business rules
+docs/           Requirement, test, and screenshot checklist
+```
+
+## Deployment order
+
+1. Run `sql/setup.sql` in the Lakebase SQL editor.
+2. Configure the existing `database/lakebase-url` Databricks secret.
+3. Import and run `pipeline/ingest_destinations_weather.py`.
+4. Deploy `mcp_server/` as a Databricks App and connect its MCP URL to Agent Bricks.
+5. Deploy `frontend/` as a second Databricks App.
+6. Execute the tests in `docs/VALIDATION.md` and capture every required screenshot.
+
+No credentials or personal access tokens belong in this repository.
