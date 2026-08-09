@@ -1,1 +1,34 @@
-IiIiUmVhZC93cml0ZSBhY2Nlc3MgdXNlZCBieSB0aGUgRmxhc2sgZnJvbnRlbmQuIiIiCgppbXBvcnQgYmFzZTY0CmltcG9ydCBvcwpmcm9tIGNvbnRleHRsaWIgaW1wb3J0IGNvbnRleHRtYW5hZ2VyCgppbXBvcnQgcHN5Y29wZzIKZnJvbSBkYXRhYnJpY2tzLnNkayBpbXBvcnQgV29ya3NwYWNlQ2xpZW50CmZyb20gcHN5Y29wZzIuZXh0cmFzIGltcG9ydCBSZWFsRGljdEN1cnNvcgoKX3dvcmtzcGFjZSA9IFdvcmtzcGFjZUNsaWVudCgpCgoKZGVmIF91cmwoKSAtPiBzdHI6CiAgICBzZWNyZXQgPSBfd29ya3NwYWNlLnNlY3JldHMuZ2V0X3NlY3JldCgKICAgICAgICBzY29wZT1vcy5lbnZpcm9uLmdldCgiTEFLRUJBU0VfU0VDUkVUX1NDT1BFIiwgImRhdGFiYXNlIiksCiAgICAgICAga2V5PW9zLmVudmlyb24uZ2V0KCJMQUtFQkFTRV9TRUNSRVRfS0VZIiwgImxha2ViYXNlLXVybCIpLAogICAgKQogICAgcmV0dXJuIGJhc2U2NC5iNjRkZWNvZGUoc2VjcmV0LnZhbHVlKS5kZWNvZGUoInV0Zi04IikKCgpAY29udGV4dG1hbmFnZXIKZGVmIGNvbm5lY3Rpb24oKToKICAgIGNvbm4gPSBwc3ljb3BnMi5jb25uZWN0KF91cmwoKSwgY3Vyc29yX2ZhY3Rvcnk9UmVhbERpY3RDdXJzb3IpCiAgICB0cnk6CiAgICAgICAgeWllbGQgY29ubgogICAgZmluYWxseToKICAgICAgICBjb25uLmNsb3NlKCkKCgpkZWYgcXVlcnkoc3FsOiBzdHIsIHBhcmFtczogdHVwbGUgPSAoKSkgLT4gbGlzdFtkaWN0XToKICAgIHdpdGggY29ubmVjdGlvbigpIGFzIGNvbm4sIGNvbm4uY3Vyc29yKCkgYXMgY3Vyc29yOgogICAgICAgIGN1cnNvci5leGVjdXRlKHNxbCwgcGFyYW1zKQogICAgICAgIHJldHVybiBjdXJzb3IuZmV0Y2hhbGwoKQo=
+"""Read/write access used by the Flask frontend."""
+
+import base64
+import os
+from contextlib import contextmanager
+
+import psycopg2
+from databricks.sdk import WorkspaceClient
+from psycopg2.extras import RealDictCursor
+
+_workspace = WorkspaceClient()
+
+
+def _url() -> str:
+    secret = _workspace.secrets.get_secret(
+        scope=os.environ.get("LAKEBASE_SECRET_SCOPE", "database"),
+        key=os.environ.get("LAKEBASE_SECRET_KEY", "lakebase-url"),
+    )
+    return base64.b64decode(secret.value).decode("utf-8")
+
+
+@contextmanager
+def connection():
+    conn = psycopg2.connect(_url(), cursor_factory=RealDictCursor)
+    try:
+        yield conn
+    finally:
+        conn.close()
+
+
+def query(sql: str, params: tuple = ()) -> list[dict]:
+    with connection() as conn, conn.cursor() as cursor:
+        cursor.execute(sql, params)
+        return cursor.fetchall()
