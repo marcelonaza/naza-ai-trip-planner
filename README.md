@@ -37,8 +37,8 @@ docs/           Requirement, test, and screenshot checklist
 ## Deployment order
 
 1. Run `sql/setup.sql` in the Lakebase SQL editor.
-2. Configure the existing `database/lakebase-url` Databricks secret.
-3. Import and run `pipeline/ingest_destinations_weather.py`.
+2. Import `pipeline/ingest_destinations_weather.py` into the Databricks Git Folder.
+3. Run the dependency cell, restart Python when prompted, and continue from the imports cell. Lakebase authentication uses a temporary OAuth credential generated at runtime; no database secret or personal token is required.
 4. Deploy `mcp_server/` as a Databricks App and connect its MCP URL to Agent Bricks.
 5. Deploy `frontend/` as a second Databricks App.
 6. Execute the tests in `docs/VALIDATION.md` and capture every required screenshot.
