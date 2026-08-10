@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install -q 'databricks-sdk>=0.61.0' psycopg2-binary requests sentence-transformers
+# MAGIC %pip uninstall -y psycopg2 psycopg2-binary psycopg-binary psycopg-c
+# MAGIC %pip install -q --no-cache-dir 'databricks-sdk>=0.61.0' 'psycopg>=3.2,<3.3' requests sentence-transformers
 
 # COMMAND ----------
 
@@ -15,11 +16,15 @@ dbutils.library.restartPython()
 
 # COMMAND ----------
 
-import base64
-from datetime import date, timedelta
-from urllib.parse import urlparse
+import os
 
-import psycopg2
+# Force Psycopg's pure-Python implementation. The binary implementation
+# aborts the Python process on the current Databricks compute.
+os.environ["PSYCOPG_IMPL"] = "python"
+
+from datetime import date, timedelta
+
+import psycopg
 import requests
 from databricks.sdk import WorkspaceClient
 from sentence_transformers import SentenceTransformer
@@ -121,50 +126,161 @@ display(wiki_df.select("title", F.length("text").alias("text_length"), "source_u
 # COMMAND ----------
 
 workspace = WorkspaceClient()
-secret = workspace.secrets.get_secret(scope="database", key="lakebase-url")
-lakebase_url = base64.b64decode(secret.value).decode("utf-8")
+current_user = workspace.current_user.me()
+
+LAKEBASE_ENDPOINT = (
+    "projects/naza-ai-trip-planner/"
+    "branches/production/"
+    "endpoints/primary"
+)
+LAKEBASE_HOST = (
+    "ep-winter-moon-d839l59e."
+    "database.us-east-2.cloud.databricks.com"
+)
+
+credential = workspace.postgres.generate_database_credential(
+    endpoint=LAKEBASE_ENDPOINT
+)
+if not credential.token:
+    raise RuntimeError("Lakebase OAuth credential could not be generated.")
+
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+if model.get_sentence_embedding_dimension() != 384:
+    raise RuntimeError("The embedding model must produce 384-dimensional vectors.")
 
-with psycopg2.connect(lakebase_url) as conn, conn.cursor() as cursor:
-    cursor.execute("SELECT trip_id FROM trips WHERE name = 'Lisbon Adventure' ORDER BY trip_id LIMIT 1")
-    trip_id = cursor.fetchone()[0]
-    for row in silver_df.select("forecast_time", "temperature_c", "precipitation_probability", "weather_code").collect():
+weather_rows = silver_df.select(
+    "forecast_time",
+    "temperature_c",
+    "precipitation_probability",
+    "weather_code",
+).collect()
+article_rows = wiki_df.collect()
+
+with psycopg.connect(
+    host=LAKEBASE_HOST,
+    port=5432,
+    dbname="databricks_postgres",
+    user=current_user.user_name,
+    password=credential.token,
+    sslmode="require",
+) as conn:
+    with conn.cursor() as cursor:
         cursor.execute(
             """
-            INSERT INTO weather_snapshots
-                (trip_id, forecast_time, temperature_c, precipitation_probability, weather_code)
-            VALUES (%s, %s, %s, %s, %s)
-            ON CONFLICT (trip_id, forecast_time) DO UPDATE SET
-                temperature_c = EXCLUDED.temperature_c,
-                precipitation_probability = EXCLUDED.precipitation_probability,
-                weather_code = EXCLUDED.weather_code,
-                fetched_at = NOW()
+            SELECT trip_id
+            FROM trips
+            WHERE lower(destination_name) = lower(%s)
+            ORDER BY trip_id
+            LIMIT 1
             """,
-            (trip_id, row.forecast_time, row.temperature_c, row.precipitation_probability, row.weather_code),
+            (DESTINATION,),
         )
+        trip = cursor.fetchone()
+        if not trip:
+            raise RuntimeError(f"No trip was found for {DESTINATION}.")
+        trip_id = trip[0]
 
-    for article in wiki_df.collect():
-        cursor.execute(
-            "SELECT activity_id, name, category, description FROM activities WHERE destination_name = %s AND lower(name) = lower(%s)",
-            (DESTINATION, article.activity_name),
-        )
-        activity = cursor.fetchone()
-        if not activity:
-            continue
-        document_text = f"{activity[1]}. Category: {activity[2]}. {activity[3]}\n\n{article.text}"
-        embedding = model.encode(document_text).tolist()
-        vector_literal = "[" + ",".join(str(value) for value in embedding) + "]"
-        cursor.execute(
-            """
-            INSERT INTO activity_documents (activity_id, document_text, embedding)
-            VALUES (%s, %s, %s::vector)
-            ON CONFLICT (activity_id) DO UPDATE SET
-                document_text = EXCLUDED.document_text,
-                embedding = EXCLUDED.embedding,
-                updated_at = NOW()
-            """,
-            (activity[0], document_text, vector_literal),
-        )
+        for row in weather_rows:
+            cursor.execute(
+                """
+                INSERT INTO weather_snapshots (
+                    trip_id,
+                    forecast_time,
+                    temperature_c,
+                    precipitation_probability,
+                    weather_code,
+                    source
+                )
+                VALUES (%s, %s, %s, %s, %s, 'Open-Meteo')
+                ON CONFLICT (trip_id, forecast_time) DO UPDATE SET
+                    temperature_c = EXCLUDED.temperature_c,
+                    precipitation_probability = EXCLUDED.precipitation_probability,
+                    weather_code = EXCLUDED.weather_code,
+                    source = EXCLUDED.source,
+                    fetched_at = NOW()
+                """,
+                (
+                    trip_id,
+                    row.forecast_time,
+                    row.temperature_c,
+                    row.precipitation_probability,
+                    row.weather_code,
+                ),
+            )
+
+        for article in article_rows:
+            cursor.execute(
+                """
+                SELECT activity_id, name, category, description
+                FROM activities
+                WHERE lower(destination_name) = lower(%s)
+                  AND lower(name) = lower(%s)
+                LIMIT 1
+                """,
+                (DESTINATION, article.activity_name),
+            )
+            activity = cursor.fetchone()
+            if not activity:
+                print(f"Activity not matched: {article.activity_name}")
+                continue
+
+            document_text = (
+                f"{activity[1]}. Category: {activity[2]}. "
+                f"{activity[3] or ''}\n\n{article.text}"
+            )
+            embedding = model.encode(
+                document_text,
+                normalize_embeddings=True,
+            ).tolist()
+            vector_literal = "[" + ",".join(map(str, embedding)) + "]"
+
+            cursor.execute(
+                """
+                INSERT INTO activity_documents (
+                    activity_id,
+                    document_text,
+                    embedding
+                )
+                VALUES (%s, %s, %s::vector)
+                ON CONFLICT (activity_id) DO UPDATE SET
+                    document_text = EXCLUDED.document_text,
+                    embedding = EXCLUDED.embedding,
+                    updated_at = NOW()
+                """,
+                (activity[0], document_text, vector_literal),
+            )
+
     conn.commit()
+
+with psycopg.connect(
+    host=LAKEBASE_HOST,
+    port=5432,
+    dbname="databricks_postgres",
+    user=current_user.user_name,
+    password=credential.token,
+    sslmode="require",
+) as conn:
+    with conn.cursor() as cursor:
+        cursor.execute(
+            "SELECT COUNT(*) FROM weather_snapshots WHERE trip_id = %s",
+            (trip_id,),
+        )
+        weather_count = cursor.fetchone()[0]
+        cursor.execute(
+            """
+            SELECT COUNT(*)
+            FROM activity_documents
+            WHERE embedding IS NOT NULL
+            """
+        )
+        document_count = cursor.fetchone()[0]
+
+assert weather_count > 0, "No weather snapshots were stored."
+assert document_count > 0, "No activity embeddings were stored."
+
+print("Lakebase OAuth connection: OK")
+print("Psycopg implementation:", psycopg.pq.__impl__)
+print("Weather snapshots for trip:", weather_count)
+print("Documents with embeddings:", document_count)
 
 print("Pipeline completed: Open-Meteo + Wikimedia -> Spark Delta -> Lakebase + pgvector")
