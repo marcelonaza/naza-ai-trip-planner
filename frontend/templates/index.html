@@ -3,54 +3,190 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08111f">
   <title>Naza AI Trip Planner</title>
   <style>
-    :root { --navy:#102a43; --blue:#2563eb; --sky:#eaf4ff; --ink:#243b53; --muted:#627d98; --white:#fff; --green:#0f9d76; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Inter,system-ui,-apple-system,sans-serif; color:var(--ink); background:#f5f8fb; }
-    header { color:#fff; background:linear-gradient(120deg,#102a43,#2563eb); padding:30px 5vw 54px; }
-    header p { margin:7px 0 0; opacity:.82; }
-    main { max-width:1180px; margin:-28px auto 50px; padding:0 22px; }
-    .hero,.card { background:var(--white); border-radius:16px; box-shadow:0 10px 28px rgba(16,42,67,.09); }
-    .hero { padding:24px; display:flex; justify-content:space-between; gap:20px; align-items:center; }
-    .hero h2 { margin:0 0 8px; }
-    .badge { padding:8px 12px; border-radius:999px; color:var(--green); background:#e5f8f2; font-weight:700; white-space:nowrap; }
-    .grid { display:grid; grid-template-columns:1.2fr .8fr; gap:20px; margin-top:20px; }
-    .card { padding:22px; }
-    h3 { margin:0 0 16px; color:var(--navy); }
-    .weather { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-    .weather div { background:var(--sky); padding:14px; border-radius:12px; }
-    .item { border-left:4px solid var(--blue); padding:4px 0 4px 14px; margin:15px 0; }
-    .item strong { display:block; }
-    small,.muted { color:var(--muted); }
-    .activity-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-    .activity { padding:14px; border:1px solid #d9e2ec; border-radius:12px; }
-    .activity span { color:var(--blue); font-size:12px; font-weight:700; text-transform:uppercase; }
-    .empty { color:var(--muted); padding:12px 0; }
-    @media(max-width:760px){ .grid,.activity-grid{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.weather{grid-template-columns:1fr} }
+    :root {
+      --bg:#07101d; --panel:#0d1929; --panel-2:#122238; --line:#213653;
+      --text:#f4f8ff; --muted:#91a4bd; --blue:#4f8cff; --cyan:#36d7d0;
+      --green:#42d392; --amber:#ffcb66; --shadow:0 24px 70px rgba(0,0,0,.32);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(circle at 90% 0,rgba(79,140,255,.17),transparent 34rem),
+      radial-gradient(circle at 0 35%,rgba(54,215,208,.08),transparent 32rem),
+      var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button{font:inherit}
+    .shell{max-width:1240px;margin:auto;padding:0 24px}
+    .topbar{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08)}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:-.02em}
+    .logo{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 8px 24px rgba(79,140,255,.35)}
+    .status{display:flex;align-items:center;gap:8px;color:#b8c7d9;font-size:13px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(66,211,146,.12)}
+    .hero{padding:62px 0 42px;display:grid;grid-template-columns:1.4fr .6fr;gap:36px;align-items:end}
+    .eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    h1{font-size:clamp(42px,7vw,76px);line-height:.98;letter-spacing:-.055em;margin:14px 0 22px;max-width:900px}
+    .hero p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:720px}
+    .trip-card{background:linear-gradient(145deg,rgba(79,140,255,.18),rgba(54,215,208,.08));border:1px solid rgba(111,165,255,.3);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
+    .trip-card small{display:block;color:#a9bad0;margin-bottom:8px}
+    .trip-card strong{font-size:22px;display:block}
+    .trip-card span{display:block;color:var(--muted);margin-top:8px}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+    .metric,.card{background:linear-gradient(145deg,rgba(18,34,56,.94),rgba(11,24,40,.94));border:1px solid var(--line);box-shadow:var(--shadow)}
+    .metric{border-radius:17px;padding:18px}
+    .metric .value{font-size:27px;font-weight:850;letter-spacing:-.04em}
+    .metric .label{color:var(--muted);font-size:12px;margin-top:5px}
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+    .stack{display:grid;gap:22px}
+    .card{border-radius:22px;padding:24px}
+    .card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+    h2{margin:0;font-size:18px;letter-spacing:-.02em}
+    .pill{border:1px solid var(--line);background:#0b1626;color:#9eb2ca;padding:7px 10px;border-radius:999px;font-size:11px;font-weight:750}
+    .weather-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .weather-item{background:#0a1524;border:1px solid #1b304b;border-radius:15px;padding:15px}
+    .weather-temp{font-size:25px;font-weight:850;margin-bottom:6px}
+    .weather-meta{color:var(--muted);font-size:11px;line-height:1.6}
+    .timeline{position:relative;margin-left:7px}
+    .timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:#2d4666}
+    .timeline-item{position:relative;padding:0 0 22px 33px}
+    .timeline-item:last-child{padding-bottom:0}
+    .timeline-item:before{content:"";position:absolute;left:0;top:5px;width:15px;height:15px;border-radius:50%;background:var(--blue);border:4px solid #14243a}
+    .timeline-item strong{display:block;margin-bottom:5px}
+    .timeline-item small{color:var(--cyan)}
+    .timeline-item p{color:var(--muted);font-size:13px;line-height:1.55;margin:6px 0 0}
+    .activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .activity{background:#0a1524;border:1px solid #1b304b;border-radius:16px;padding:16px;transition:.2s ease}
+    .activity:hover{transform:translateY(-2px);border-color:#3c6598}
+    .activity-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:11px}
+    .activity-category{color:var(--cyan);font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.1em}
+    .vector{color:var(--green);font-size:10px;font-weight:750}
+    .activity strong{font-size:15px}
+    .activity p{color:var(--muted);font-size:12px;line-height:1.55;margin:8px 0 0}
+    .packing-item{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+    .packing-item:last-child{border-bottom:0}
+    .check{width:19px;height:19px;border-radius:6px;border:1px solid #395675;display:grid;place-items:center;color:#07101d;font-size:11px}
+    .check.done{background:var(--green);border-color:var(--green)}
+    .packing-item strong{display:block;font-size:13px}
+    .packing-item small{color:var(--muted);line-height:1.45}
+    .architecture{margin:22px 0 54px;padding:20px 24px;border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:rgba(10,21,36,.72)}
+    .tech{display:flex;align-items:center;gap:9px;color:#b4c4d7;font-size:12px;font-weight:700}
+    .arrow{color:#42617f}
+    .empty{color:var(--muted);padding:12px 0;font-size:13px}
+    .error{max-width:720px;margin:80px auto;background:#241522;border:1px solid #6c314b;border-radius:18px;padding:24px}
+    .skeleton{height:16px;border-radius:8px;background:linear-gradient(90deg,#14243a,#203756,#14243a);background-size:200% 100%;animation:load 1.2s infinite}
+    @keyframes load{to{background-position:-200% 0}}
+    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.shell{padding:0 16px}.hero{padding-top:40px}.metrics,.activity-grid,.weather-grid{grid-template-columns:1fr}.architecture{align-items:flex-start;flex-direction:column}.arrow{display:none}.status span:last-child{display:none}}
   </style>
 </head>
 <body>
-  <header><h1>Naza AI Trip Planner</h1><p>Weather-aware itineraries powered by Spark, Lakebase, semantic retrieval, and an AI agent.</p></header>
-  <main>
-    <section class="hero"><div><h2 id="trip-name">Loading trip…</h2><div class="muted" id="trip-meta"></div></div><div class="badge">Live Lakebase data</div></section>
-    <div class="grid">
-      <section class="card"><h3>Itinerary</h3><div id="itinerary"></div></section>
-      <section class="card"><h3>Weather outlook</h3><div class="weather" id="weather"></div><h3 style="margin-top:24px">Packing list</h3><div id="packing"></div></section>
-    </div>
-    <section class="card" style="margin-top:20px"><h3>Semantically searchable activities</h3><div class="activity-grid" id="activities"></div></section>
-  </main>
+  <div class="shell">
+    <nav class="topbar">
+      <div class="brand"><div class="logo">N</div><span>Naza AI Trip Planner</span></div>
+      <div class="status"><span class="dot"></span><span>Lakebase connected</span></div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">AI-native travel intelligence</div>
+        <h1>Plan smarter.<br>Travel with context.</h1>
+        <p>One end-to-end application combining live weather, semantic retrieval, vector embeddings and an AI-ready itinerary on Databricks.</p>
+      </div>
+      <div class="trip-card">
+        <small>Active journey</small>
+        <strong id="trip-name">Loading journey…</strong>
+        <span id="trip-meta"><span class="skeleton"></span></span>
+      </div>
+    </header>
+
+    <section class="metrics">
+      <div class="metric"><div class="value" id="forecast-hours">—</div><div class="label">forecast hours</div></div>
+      <div class="metric"><div class="value" id="temp-range">—</div><div class="label">temperature range</div></div>
+      <div class="metric"><div class="value" id="embedded-count">—</div><div class="label">vectorized activities</div></div>
+      <div class="metric"><div class="value" id="packing-progress">—</div><div class="label">packing progress</div></div>
+    </section>
+
+    <main class="grid">
+      <div class="stack">
+        <section class="card">
+          <div class="card-head"><h2>Intelligent itinerary</h2><span class="pill" id="planned-count">AI planned</span></div>
+          <div class="timeline" id="itinerary"><div class="empty">Loading itinerary…</div></div>
+        </section>
+        <section class="card">
+          <div class="card-head"><h2>Semantic activity discovery</h2><span class="pill">pgvector ready</span></div>
+          <div class="activity-grid" id="activities"><div class="empty">Loading activities…</div></div>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="card">
+          <div class="card-head"><h2>Weather intelligence</h2><span class="pill" id="rain-risk">Live forecast</span></div>
+          <div class="weather-grid" id="weather"><div class="empty">Loading forecast…</div></div>
+        </section>
+        <section class="card">
+          <div class="card-head"><h2>Adaptive packing list</h2><span class="pill">Context aware</span></div>
+          <div id="packing"><div class="empty">Loading packing list…</div></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="architecture">
+      <div class="tech">Open-Meteo + Wikimedia</div><span class="arrow">→</span>
+      <div class="tech">Apache Spark + Delta</div><span class="arrow">→</span>
+      <div class="tech">Lakebase + pgvector</div><span class="arrow">→</span>
+      <div class="tech">Databricks App</div>
+    </footer>
+  </div>
+
   <script>
-    const fmt = value => new Date(value).toLocaleString([], {dateStyle:'medium',timeStyle:'short'});
-    fetch('./api/dashboard').then(r => r.json()).then(data => {
-      if(data.error) throw new Error(data.error);
-      document.querySelector('#trip-name').textContent=data.trip.name;
-      document.querySelector('#trip-meta').textContent=`${data.trip.destination_name} · ${data.trip.start_date} to ${data.trip.end_date}`;
-      document.querySelector('#itinerary').innerHTML=data.itinerary.length?data.itinerary.map(x=>`<div class="item"><strong>${x.name}</strong><small>${fmt(x.scheduled_at)} · ${x.duration_minutes} min · ${x.indoor?'Indoor':'Outdoor'}</small><div>${x.rationale||''}</div></div>`).join(''):'<div class="empty">Ask the agent to add an itinerary item.</div>';
-      document.querySelector('#weather').innerHTML=data.weather.slice(0,3).map(x=>`<div><strong>${Number(x.temperature_c).toFixed(1)}°C</strong><br><small>${fmt(x.forecast_time)}<br>Rain ${x.precipitation_probability??0}%</small></div>`).join('')||'<div class="empty">Run the Spark pipeline.</div>';
-      document.querySelector('#packing').innerHTML=data.packing.length?data.packing.map(x=>`<div class="item"><strong>${x.item_name}</strong><small>${x.reason}</small></div>`).join(''):'<div class="empty">Ask the agent to generate the list.</div>';
-      document.querySelector('#activities').innerHTML=data.activities.map(x=>`<div class="activity"><span>${x.category} · ${x.indoor?'Indoor':'Outdoor'}</span><strong>${x.name}</strong><p>${x.description}</p></div>`).join('');
-    }).catch(error => { document.querySelector('main').innerHTML=`<section class="card"><h3>Setup required</h3><p>${error.message}</p></section>`; });
+    const $ = selector => document.querySelector(selector);
+    const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
+    const formatDateTime = value => value ? new Date(value).toLocaleString([], {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'Flexible';
+    const number = value => Number(value ?? 0);
+
+    fetch('./api/dashboard')
+      .then(response => response.ok ? response.json() : response.json().then(data => Promise.reject(new Error(data.error || 'Dashboard unavailable'))))
+      .then(data => {
+        const summary = data.summary || {};
+        $('#trip-name').textContent = data.trip.name || data.trip.destination_name;
+        $('#trip-meta').textContent = `${data.trip.destination_name} · ${data.trip.start_date} — ${data.trip.end_date}`;
+        $('#forecast-hours').textContent = summary.forecast_hours ?? data.weather.length;
+        $('#temp-range').textContent = summary.min_temperature_c == null ? '—' : `${number(summary.min_temperature_c).toFixed(0)}–${number(summary.max_temperature_c).toFixed(0)}°C`;
+        $('#embedded-count').textContent = `${summary.embedded_activities ?? 0}/${data.activities.length}`;
+        $('#packing-progress').textContent = `${summary.packing_progress ?? 0}%`;
+        $('#planned-count').textContent = `${summary.planned_items ?? data.itinerary.length} planned`;
+        $('#rain-risk').textContent = `Rain risk ${summary.max_rain_probability ?? 0}%`;
+
+        $('#weather').innerHTML = data.weather.slice(0, 6).map(item => `
+          <article class="weather-item">
+            <div class="weather-temp">${number(item.temperature_c).toFixed(1)}°</div>
+            <div class="weather-meta">${escapeHTML(formatDateTime(item.forecast_time))}<br>Rain ${number(item.precipitation_probability)}% · Code ${escapeHTML(item.weather_code)}</div>
+          </article>`).join('') || '<div class="empty">Run the weather pipeline to populate this view.</div>';
+
+        $('#itinerary').innerHTML = data.itinerary.map(item => `
+          <article class="timeline-item">
+            <small>${escapeHTML(formatDateTime(item.scheduled_at))} · ${number(item.duration_minutes)} min</small>
+            <strong>${escapeHTML(item.name)}</strong>
+            <p>${escapeHTML(item.rationale || `${item.category} · ${item.indoor ? 'Indoor' : 'Outdoor'}`)}</p>
+          </article>`).join('') || '<div class="empty">The AI agent is ready to build this itinerary.</div>';
+
+        $('#activities').innerHTML = data.activities.map(item => `
+          <article class="activity">
+            <div class="activity-top"><span class="activity-category">${escapeHTML(item.category)} · ${item.indoor ? 'Indoor' : 'Outdoor'}</span><span class="vector">${item.embedded ? '● embedded' : '○ pending'}</span></div>
+            <strong>${escapeHTML(item.name)}</strong>
+            <p>${escapeHTML(item.description || 'Context available for semantic recommendations.')}</p>
+          </article>`).join('') || '<div class="empty">No activities found for this destination.</div>';
+
+        $('#packing').innerHTML = data.packing.map(item => `
+          <div class="packing-item">
+            <span class="check ${item.packed ? 'done' : ''}">${item.packed ? '✓' : ''}</span>
+            <div><strong>${escapeHTML(item.item_name)}</strong><small>${escapeHTML(item.reason || 'Recommended for this journey')}</small></div>
+          </div>`).join('') || '<div class="empty">Ask the agent to generate a weather-aware packing list.</div>';
+      })
+      .catch(error => {
+        document.querySelector('.shell').innerHTML = `<div class="error"><div class="eyebrow">Connection check</div><h2>Dashboard setup required</h2><p>${escapeHTML(error.message)}</p></div>`;
+      });
   </script>
 </body>
 </html>
