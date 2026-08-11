@@ -3,8 +3,6 @@ command:
   - "app.py"
 
 env:
-  - name: PSYCOPG_IMPL
-    value: "python"
   - name: LAKEBASE_ENDPOINT
     value: "projects/naza-ai-trip-planner/branches/production/endpoints/primary"
   - name: LAKEBASE_HOST
