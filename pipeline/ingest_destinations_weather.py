@@ -23,6 +23,7 @@ import os
 os.environ["PSYCOPG_IMPL"] = "python"
 
 from datetime import date, timedelta
+from importlib.metadata import version
 
 import psycopg
 import requests
@@ -135,7 +136,7 @@ if not hasattr(workspace, "postgres"):
 
 current_user = workspace.current_user.me()
 
-print("Databricks SDK:", __import__("databricks.sdk").sdk.__version__)
+print("Databricks SDK:", version("databricks-sdk"))
 print("Psycopg:", psycopg.__version__)
 print("Psycopg implementation:", psycopg.pq.__impl__)
 print("Lakebase Postgres API available:", hasattr(workspace, "postgres"))
