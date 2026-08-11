@@ -8,7 +8,7 @@
 # COMMAND ----------
 
 # MAGIC %pip uninstall -y psycopg2 psycopg2-binary psycopg-binary psycopg-c
-# MAGIC %pip install -q --no-cache-dir 'databricks-sdk>=0.61.0' 'psycopg>=3.2,<3.3' requests sentence-transformers
+# MAGIC %pip install -q --no-cache-dir 'databricks-sdk>=0.89.0' 'psycopg>=3.2,<3.3' requests sentence-transformers
 
 # COMMAND ----------
 
@@ -126,7 +126,19 @@ display(wiki_df.select("title", F.length("text").alias("text_length"), "source_u
 # COMMAND ----------
 
 workspace = WorkspaceClient()
+
+if not hasattr(workspace, "postgres"):
+    raise RuntimeError(
+        "The loaded databricks-sdk does not expose workspace.postgres. "
+        "Run the %pip cell, restart Python, and then resume from the imports cell."
+    )
+
 current_user = workspace.current_user.me()
+
+print("Databricks SDK:", __import__("databricks.sdk").sdk.__version__)
+print("Psycopg:", psycopg.__version__)
+print("Psycopg implementation:", psycopg.pq.__impl__)
+print("Lakebase Postgres API available:", hasattr(workspace, "postgres"))
 
 LAKEBASE_ENDPOINT = (
     "projects/naza-ai-trip-planner/"
