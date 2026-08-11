@@ -1,192 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08111f">
-  <title>Naza AI Trip Planner</title>
-  <style>
-    :root {
-      --bg:#07101d; --panel:#0d1929; --panel-2:#122238; --line:#213653;
-      --text:#f4f8ff; --muted:#91a4bd; --blue:#4f8cff; --cyan:#36d7d0;
-      --green:#42d392; --amber:#ffcb66; --shadow:0 24px 70px rgba(0,0,0,.32);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:
-      radial-gradient(circle at 90% 0,rgba(79,140,255,.17),transparent 34rem),
-      radial-gradient(circle at 0 35%,rgba(54,215,208,.08),transparent 32rem),
-      var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    button{font:inherit}
-    .shell{max-width:1240px;margin:auto;padding:0 24px}
-    .topbar{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08)}
-    .brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:-.02em}
-    .logo{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 8px 24px rgba(79,140,255,.35)}
-    .status{display:flex;align-items:center;gap:8px;color:#b8c7d9;font-size:13px}
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(66,211,146,.12)}
-    .hero{padding:62px 0 42px;display:grid;grid-template-columns:1.4fr .6fr;gap:36px;align-items:end}
-    .eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-    h1{font-size:clamp(42px,7vw,76px);line-height:.98;letter-spacing:-.055em;margin:14px 0 22px;max-width:900px}
-    .hero p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:720px}
-    .trip-card{background:linear-gradient(145deg,rgba(79,140,255,.18),rgba(54,215,208,.08));border:1px solid rgba(111,165,255,.3);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
-    .trip-card small{display:block;color:#a9bad0;margin-bottom:8px}
-    .trip-card strong{font-size:22px;display:block}
-    .trip-card span{display:block;color:var(--muted);margin-top:8px}
-    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
-    .metric,.card{background:linear-gradient(145deg,rgba(18,34,56,.94),rgba(11,24,40,.94));border:1px solid var(--line);box-shadow:var(--shadow)}
-    .metric{border-radius:17px;padding:18px}
-    .metric .value{font-size:27px;font-weight:850;letter-spacing:-.04em}
-    .metric .label{color:var(--muted);font-size:12px;margin-top:5px}
-    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
-    .stack{display:grid;gap:22px}
-    .card{border-radius:22px;padding:24px}
-    .card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
-    h2{margin:0;font-size:18px;letter-spacing:-.02em}
-    .pill{border:1px solid var(--line);background:#0b1626;color:#9eb2ca;padding:7px 10px;border-radius:999px;font-size:11px;font-weight:750}
-    .weather-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .weather-item{background:#0a1524;border:1px solid #1b304b;border-radius:15px;padding:15px}
-    .weather-temp{font-size:25px;font-weight:850;margin-bottom:6px}
-    .weather-meta{color:var(--muted);font-size:11px;line-height:1.6}
-    .timeline{position:relative;margin-left:7px}
-    .timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:#2d4666}
-    .timeline-item{position:relative;padding:0 0 22px 33px}
-    .timeline-item:last-child{padding-bottom:0}
-    .timeline-item:before{content:"";position:absolute;left:0;top:5px;width:15px;height:15px;border-radius:50%;background:var(--blue);border:4px solid #14243a}
-    .timeline-item strong{display:block;margin-bottom:5px}
-    .timeline-item small{color:var(--cyan)}
-    .timeline-item p{color:var(--muted);font-size:13px;line-height:1.55;margin:6px 0 0}
-    .activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .activity{background:#0a1524;border:1px solid #1b304b;border-radius:16px;padding:16px;transition:.2s ease}
-    .activity:hover{transform:translateY(-2px);border-color:#3c6598}
-    .activity-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:11px}
-    .activity-category{color:var(--cyan);font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.1em}
-    .vector{color:var(--green);font-size:10px;font-weight:750}
-    .activity strong{font-size:15px}
-    .activity p{color:var(--muted);font-size:12px;line-height:1.55;margin:8px 0 0}
-    .packing-item{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
-    .packing-item:last-child{border-bottom:0}
-    .check{width:19px;height:19px;border-radius:6px;border:1px solid #395675;display:grid;place-items:center;color:#07101d;font-size:11px}
-    .check.done{background:var(--green);border-color:var(--green)}
-    .packing-item strong{display:block;font-size:13px}
-    .packing-item small{color:var(--muted);line-height:1.45}
-    .architecture{margin:22px 0 54px;padding:20px 24px;border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:rgba(10,21,36,.72)}
-    .tech{display:flex;align-items:center;gap:9px;color:#b4c4d7;font-size:12px;font-weight:700}
-    .arrow{color:#42617f}
-    .empty{color:var(--muted);padding:12px 0;font-size:13px}
-    .error{max-width:720px;margin:80px auto;background:#241522;border:1px solid #6c314b;border-radius:18px;padding:24px}
-    .skeleton{height:16px;border-radius:8px;background:linear-gradient(90deg,#14243a,#203756,#14243a);background-size:200% 100%;animation:load 1.2s infinite}
-    @keyframes load{to{background-position:-200% 0}}
-    @media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:620px){.shell{padding:0 16px}.hero{padding-top:40px}.metrics,.activity-grid,.weather-grid{grid-template-columns:1fr}.architecture{align-items:flex-start;flex-direction:column}.arrow{display:none}.status span:last-child{display:none}}
-  </style>
-</head>
-<body>
-  <div class="shell">
-    <nav class="topbar">
-      <div class="brand"><div class="logo">N</div><span>Naza AI Trip Planner</span></div>
-      <div class="status"><span class="dot"></span><span>Lakebase connected</span></div>
-    </nav>
-
-    <header class="hero">
-      <div>
-        <div class="eyebrow">AI-native travel intelligence</div>
-        <h1>Plan smarter.<br>Travel with context.</h1>
-        <p>One end-to-end application combining live weather, semantic retrieval, vector embeddings and an AI-ready itinerary on Databricks.</p>
-      </div>
-      <div class="trip-card">
-        <small>Active journey</small>
-        <strong id="trip-name">Loading journey…</strong>
-        <span id="trip-meta"><span class="skeleton"></span></span>
-      </div>
-    </header>
-
-    <section class="metrics">
-      <div class="metric"><div class="value" id="forecast-hours">—</div><div class="label">forecast hours</div></div>
-      <div class="metric"><div class="value" id="temp-range">—</div><div class="label">temperature range</div></div>
-      <div class="metric"><div class="value" id="embedded-count">—</div><div class="label">vectorized activities</div></div>
-      <div class="metric"><div class="value" id="packing-progress">—</div><div class="label">packing progress</div></div>
-    </section>
-
-    <main class="grid">
-      <div class="stack">
-        <section class="card">
-          <div class="card-head"><h2>Intelligent itinerary</h2><span class="pill" id="planned-count">AI planned</span></div>
-          <div class="timeline" id="itinerary"><div class="empty">Loading itinerary…</div></div>
-        </section>
-        <section class="card">
-          <div class="card-head"><h2>Semantic activity discovery</h2><span class="pill">pgvector ready</span></div>
-          <div class="activity-grid" id="activities"><div class="empty">Loading activities…</div></div>
-        </section>
-      </div>
-
-      <div class="stack">
-        <section class="card">
-          <div class="card-head"><h2>Weather intelligence</h2><span class="pill" id="rain-risk">Live forecast</span></div>
-          <div class="weather-grid" id="weather"><div class="empty">Loading forecast…</div></div>
-        </section>
-        <section class="card">
-          <div class="card-head"><h2>Adaptive packing list</h2><span class="pill">Context aware</span></div>
-          <div id="packing"><div class="empty">Loading packing list…</div></div>
-        </section>
-      </div>
-    </main>
-
-    <footer class="architecture">
-      <div class="tech">Open-Meteo + Wikimedia</div><span class="arrow">→</span>
-      <div class="tech">Apache Spark + Delta</div><span class="arrow">→</span>
-      <div class="tech">Lakebase + pgvector</div><span class="arrow">→</span>
-      <div class="tech">Databricks App</div>
-    </footer>
-  </div>
-
-  <script>
-    const $ = selector => document.querySelector(selector);
-    const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
-    const formatDateTime = value => value ? new Date(value).toLocaleString([], {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'Flexible';
-    const number = value => Number(value ?? 0);
-
-    fetch('./api/dashboard')
-      .then(response => response.ok ? response.json() : response.json().then(data => Promise.reject(new Error(data.error || 'Dashboard unavailable'))))
-      .then(data => {
-        const summary = data.summary || {};
-        $('#trip-name').textContent = data.trip.name || data.trip.destination_name;
-        $('#trip-meta').textContent = `${data.trip.destination_name} · ${data.trip.start_date} — ${data.trip.end_date}`;
-        $('#forecast-hours').textContent = summary.forecast_hours ?? data.weather.length;
-        $('#temp-range').textContent = summary.min_temperature_c == null ? '—' : `${number(summary.min_temperature_c).toFixed(0)}–${number(summary.max_temperature_c).toFixed(0)}°C`;
-        $('#embedded-count').textContent = `${summary.embedded_activities ?? 0}/${data.activities.length}`;
-        $('#packing-progress').textContent = `${summary.packing_progress ?? 0}%`;
-        $('#planned-count').textContent = `${summary.planned_items ?? data.itinerary.length} planned`;
-        $('#rain-risk').textContent = `Rain risk ${summary.max_rain_probability ?? 0}%`;
-
-        $('#weather').innerHTML = data.weather.slice(0, 6).map(item => `
-          <article class="weather-item">
-            <div class="weather-temp">${number(item.temperature_c).toFixed(1)}°</div>
-            <div class="weather-meta">${escapeHTML(formatDateTime(item.forecast_time))}<br>Rain ${number(item.precipitation_probability)}% · Code ${escapeHTML(item.weather_code)}</div>
-          </article>`).join('') || '<div class="empty">Run the weather pipeline to populate this view.</div>';
-
-        $('#itinerary').innerHTML = data.itinerary.map(item => `
-          <article class="timeline-item">
-            <small>${escapeHTML(formatDateTime(item.scheduled_at))} · ${number(item.duration_minutes)} min</small>
-            <strong>${escapeHTML(item.name)}</strong>
-            <p>${escapeHTML(item.rationale || `${item.category} · ${item.indoor ? 'Indoor' : 'Outdoor'}`)}</p>
-          </article>`).join('') || '<div class="empty">The AI agent is ready to build this itinerary.</div>';
-
-        $('#activities').innerHTML = data.activities.map(item => `
-          <article class="activity">
-            <div class="activity-top"><span class="activity-category">${escapeHTML(item.category)} · ${item.indoor ? 'Indoor' : 'Outdoor'}</span><span class="vector">${item.embedded ? '● embedded' : '○ pending'}</span></div>
-            <strong>${escapeHTML(item.name)}</strong>
-            <p>${escapeHTML(item.description || 'Context available for semantic recommendations.')}</p>
-          </article>`).join('') || '<div class="empty">No activities found for this destination.</div>';
-
-        $('#packing').innerHTML = data.packing.map(item => `
-          <div class="packing-item">
-            <span class="check ${item.packed ? 'done' : ''}">${item.packed ? '✓' : ''}</span>
-            <div><strong>${escapeHTML(item.item_name)}</strong><small>${escapeHTML(item.reason || 'Recommended for this journey')}</small></div>
-          </div>`).join('') || '<div class="empty">Ask the agent to generate a weather-aware packing list.</div>';
-      })
-      .catch(error => {
-        document.querySelector('.shell').innerHTML = `<div class="error"><div class="eyebrow">Connection check</div><h2>Dashboard setup required</h2><p>${escapeHTML(error.message)}</p></div>`;
-      });
-  </script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Naza AI Trip Planner</title>
+<style>
+:root{--bg:#07101d;--panel:#102037;--line:#263e5e;--text:#f4f8ff;--muted:#96a9c2;--blue:#5792ff;--cyan:#36d7d0;--green:#42d392;--red:#ff718f}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0,#162e54 0,transparent 35rem),var(--bg);color:var(--text);font:14px Inter,system-ui,sans-serif}.shell{max-width:1240px;margin:auto;padding:0 24px}.top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff15}.brand{font-weight:850;font-size:17px}.brand b{display:inline-grid;place-items:center;width:34px;height:34px;margin-right:10px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--cyan))}.online{color:var(--green)}.hero{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:end;padding:42px 0 28px}.eyebrow{color:var(--cyan);font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}h1{font-size:clamp(38px,6vw,66px);letter-spacing:-.055em;line-height:1;margin:10px 0 15px}.muted{color:var(--muted);line-height:1.6}.trip{padding:18px 22px;border:1px solid #31527d;border-radius:18px;background:#122846;min-width:280px}.trip strong{font-size:19px;display:block;margin:6px 0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}.metric,.card{background:linear-gradient(145deg,#12243c,#0c192b);border:1px solid var(--line);box-shadow:0 18px 55px #0005}.metric{padding:16px;border-radius:15px}.metric b{font-size:26px;display:block}.metric small{color:var(--muted)}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.stack{display:grid;gap:20px}.card{padding:21px;border-radius:19px}.head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}h2{font-size:17px;margin:0}.actions{display:flex;gap:8px;flex-wrap:wrap}button{border:0;border-radius:10px;padding:9px 12px;background:var(--blue);color:white;font-weight:750;cursor:pointer}button.secondary{background:#172b46;border:1px solid #315175}button.danger{background:#432033;color:#ffb5c5}button:disabled{opacity:.55;cursor:wait}.timeline{display:grid;gap:10px}.item,.activity,.weather{padding:14px;border:1px solid #203a5b;background:#091727;border-radius:13px}.item{display:grid;grid-template-columns:1fr auto;gap:12px}.item small,.activity small,.weather small{color:var(--cyan)}.item p,.activity p{color:var(--muted);margin:6px 0 0;font-size:12px;line-height:1.5}.activities{display:grid;grid-template-columns:1fr 1fr;gap:10px}.activity .row{display:flex;justify-content:space-between;gap:8px}.activity button{margin-top:10px;width:100%}.search{display:flex;gap:8px;margin-bottom:12px}.search input{flex:1;background:#081524;color:white;border:1px solid #315175;border-radius:10px;padding:10px}.weather-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.weather b{font-size:22px;display:block}.packing{display:grid;gap:4px}.pack{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #ffffff10}.pack input{accent-color:var(--green);width:18px;height:18px}.pack small{display:block;color:var(--muted)}.empty{color:var(--muted);padding:12px}.toast{position:fixed;right:24px;bottom:24px;max-width:370px;padding:14px 18px;background:#143453;border:1px solid #3972a4;border-radius:12px;box-shadow:0 15px 50px #0008;display:none}.toast.error{background:#421d2c;border-color:#a94663}.architecture{margin:20px 0 40px;text-align:center;color:var(--muted);padding:18px;border:1px solid var(--line);border-radius:15px}.pill{font-size:10px;color:var(--green);border:1px solid #2b6655;border-radius:99px;padding:6px 9px}@media(max-width:850px){.hero,.grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.trip{min-width:0}}@media(max-width:560px){.activities,.weather-grid,.metrics{grid-template-columns:1fr}.shell{padding:0 14px}}
+</style></head><body><div class="shell"><nav class="top"><div class="brand"><b>N</b>Naza AI Trip Planner</div><div class="online">● Lakebase connected</div></nav>
+<header class="hero"><div><div class="eyebrow">Interactive AI-native travel intelligence</div><h1>Plan smarter.<br>Act with context.</h1><p class="muted">Generate, search, edit and persist a weather-aware journey with Databricks, Lakebase and vector-ready context.</p></div><div class="trip"><small class="muted">Active journey</small><strong id="trip-name">Loading…</strong><span id="trip-meta" class="muted"></span></div></header>
+<section class="metrics"><div class="metric"><b id="hours">—</b><small>forecast hours</small></div><div class="metric"><b id="temps">—</b><small>temperature range</small></div><div class="metric"><b id="vectors">—</b><small>vectorized activities</small></div><div class="metric"><b id="progress">—</b><small>packing progress</small></div></section>
+<main class="grid"><div class="stack"><section class="card"><div class="head"><h2>Intelligent itinerary</h2><div class="actions"><span id="planned" class="pill">0 persisted</span><button id="generate-trip">Generate with AI</button></div></div><div id="itinerary" class="timeline"></div></section>
+<section class="card"><div class="head"><h2>Semantic activity discovery</h2><span class="pill">embedded context</span></div><div class="search"><input id="search-q" placeholder="Try: history, indoor, food…"><button id="search-btn" class="secondary">Search</button></div><div id="activities" class="activities"></div></section></div>
+<div class="stack"><section class="card"><div class="head"><h2>Weather intelligence</h2><span id="rain" class="pill">live forecast</span></div><div id="weather" class="weather-grid"></div></section>
+<section class="card"><div class="head"><h2>Adaptive packing list</h2><button id="generate-pack" class="secondary">Generate list</button></div><div id="packing" class="packing"></div></section></div></main>
+<footer class="architecture">Open-Meteo + Wikimedia → Spark + Delta → Lakebase + pgvector → Interactive Databricks App</footer></div><div id="toast" class="toast"></div>
+<script>
+const $=s=>document.querySelector(s), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])), dt=v=>v?new Date(v).toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}):'Flexible';let state={};
+function toast(message,error=false){const t=$('#toast');t.textContent=message;t.className='toast'+(error?' error':'');t.style.display='block';setTimeout(()=>t.style.display='none',4200)}
+async function api(url,options={}){const r=await fetch(url,{headers:{'Content-Type':'application/json','X-Requested-With':'NazaTripPlanner'},...options});const text=await r.text();let data;try{data=JSON.parse(text)}catch{throw Error(`Server returned ${r.status} instead of JSON`)}if(!r.ok||data.ok===false)throw Error(data.error||`Request failed (${r.status})`);return data}
+function busy(button,on){button.disabled=on;button.dataset.label??=button.textContent;button.textContent=on?'Working…':button.dataset.label}
+function renderActivities(items){$('#activities').innerHTML=items.map(a=>`<article class="activity"><div class="row"><small>${esc(a.category)} · ${a.indoor?'Indoor':'Outdoor'}</small><small>${a.embedded?'● embedded':''}</small></div><strong>${esc(a.name)}</strong><p>${esc(a.description)}</p><button class="secondary add" data-id="${a.activity_id}">+ Add to itinerary</button></article>`).join('')||'<div class="empty">No matching activities.</div>'}
+function render(){const d=state,s=d.summary;$('#trip-name').textContent=d.trip.name;$('#trip-meta').textContent=`${d.trip.destination_name} · ${d.trip.start_date} — ${d.trip.end_date}`;$('#hours').textContent=s.forecast_hours;$('#temps').textContent=s.min_temperature_c==null?'—':`${Math.round(s.min_temperature_c)}–${Math.round(s.max_temperature_c)}°C`;$('#vectors').textContent=`${s.embedded_activities}/${d.activities.length}`;$('#progress').textContent=`${s.packing_progress}%`;$('#planned').textContent=`${s.planned_items} persisted`;$('#rain').textContent=`rain risk ${s.max_rain_probability}%`;
+$('#weather').innerHTML=d.weather.slice(0,6).map(w=>`<div class="weather"><b>${Number(w.temperature_c).toFixed(1)}°</b><small>${esc(dt(w.forecast_time))}<br>Rain ${w.precipitation_probability||0}%</small></div>`).join('');
+$('#itinerary').innerHTML=d.itinerary.map(i=>`<article class="item"><div><small>${esc(dt(i.scheduled_at))} · ${i.duration_minutes} min</small><strong>${esc(i.name)}</strong><p>${esc(i.rationale)}</p></div><button class="danger remove" data-id="${i.itinerary_item_id}">Remove</button></article>`).join('')||'<div class="empty">No itinerary yet. Generate one or add an activity below.</div>';renderActivities(d.activities);
+$('#packing').innerHTML=d.packing.map(p=>`<label class="pack"><input class="pack-check" type="checkbox" data-id="${p.packing_item_id}" ${p.packed?'checked':''}><span><strong>${esc(p.item_name)}</strong><small>${esc(p.reason)}</small></span></label>`).join('')||'<div class="empty">Generate a weather-aware packing list.</div>'}
+async function load(){state=await api('./api/dashboard');render()}
+$('#generate-trip').onclick=async e=>{busy(e.target,true);try{const r=await api('./api/itinerary/generate',{method:'POST',body:JSON.stringify({trip_id:state.trip.trip_id})});toast(r.message);await load()}catch(x){toast(x.message,true)}finally{busy(e.target,false)}};
+$('#generate-pack').onclick=async e=>{busy(e.target,true);try{const r=await api('./api/packing/generate',{method:'POST',body:JSON.stringify({trip_id:state.trip.trip_id})});toast(r.message);await load()}catch(x){toast(x.message,true)}finally{busy(e.target,false)}};
+$('#search-btn').onclick=async e=>{const q=$('#search-q').value.trim();if(!q)return renderActivities(state.activities);busy(e.target,true);try{const r=await api(`./api/activities/search?q=${encodeURIComponent(q)}`);renderActivities(r.results);toast(`${r.results.length} context matches found`)}catch(x){toast(x.message,true)}finally{busy(e.target,false)}};$('#search-q').onkeydown=e=>{if(e.key==='Enter')$('#search-btn').click()};
+document.addEventListener('click',async e=>{if(e.target.matches('.add')){busy(e.target,true);try{const r=await api('./api/itinerary/items',{method:'POST',body:JSON.stringify({trip_id:state.trip.trip_id,activity_id:Number(e.target.dataset.id)})});toast(r.message);await load()}catch(x){toast(x.message,true)}finally{busy(e.target,false)}}if(e.target.matches('.remove')){busy(e.target,true);try{const r=await api(`./api/itinerary/items/${e.target.dataset.id}/cancel`,{method:'PATCH'});toast(r.message);await load()}catch(x){toast(x.message,true)}finally{busy(e.target,false)}}});
+document.addEventListener('change',async e=>{if(e.target.matches('.pack-check')){try{const r=await api(`./api/packing/${e.target.dataset.id}`,{method:'PATCH',body:JSON.stringify({packed:e.target.checked})});toast(r.message);await load()}catch(x){e.target.checked=!e.target.checked;toast(x.message,true)}}});
+load().catch(e=>toast(e.message,true));
+</script></body></html>
