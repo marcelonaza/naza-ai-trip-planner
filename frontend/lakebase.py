@@ -3,8 +3,6 @@
 import os
 from contextlib import contextmanager
 
-os.environ.setdefault("PSYCOPG_IMPL", "python")
-
 import psycopg
 from databricks.sdk import WorkspaceClient
 from psycopg.rows import dict_row
