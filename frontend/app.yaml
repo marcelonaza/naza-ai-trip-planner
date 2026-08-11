@@ -3,7 +3,11 @@ command:
   - "app.py"
 
 env:
-  - name: LAKEBASE_SECRET_SCOPE
-    value: "database"
-  - name: LAKEBASE_SECRET_KEY
-    value: "lakebase-url"
+  - name: PSYCOPG_IMPL
+    value: "python"
+  - name: LAKEBASE_ENDPOINT
+    value: "projects/naza-ai-trip-planner/branches/production/endpoints/primary"
+  - name: LAKEBASE_HOST
+    value: "ep-winter-moon-d839l59e.database.us-east-2.cloud.databricks.com"
+  - name: LAKEBASE_DATABASE
+    value: "databricks_postgres"
