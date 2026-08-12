@@ -176,6 +176,12 @@ Full results are documented in [`resume.md`](resume.md).
 - eight MCP tools for retrieval and persisted actions;
 - an interactive Databricks App backed by Lakebase and `pgvector`.
 
+## Future development — Phase 2
+
+Phase 1 was completed as a validated capstone MVP and received **86/100**. Future work will focus on Databricks Job operationalization, resilient API integration, pgvector search in the frontend, Agent Bricks evidence, runtime consistency, and guarded integration testing.
+
+See [`PHASE_2_ROADMAP.md`](PHASE_2_ROADMAP.md) for the planned milestones and acceptance criteria.
+
 ## Author
 
 **Marcelo Naza**  
