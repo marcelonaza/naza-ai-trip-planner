@@ -19,7 +19,7 @@ Phase 2 is a future evolution of the project. Its goal is to strengthen producti
 
 1. Operationalize the Spark pipeline as a reusable Databricks Job.
 2. Improve resilience when calling external APIs.
-3. expose true vector similarity search in the frontend.
+3. Expose true vector similarity search in the frontend.
 4. Demonstrate the Agent Bricks workflow with traceable read and write actions.
 5. Align runtime dependencies across the pipeline, MCP server, and frontend.
 6. Add integration tests and clearer operational error reporting.
